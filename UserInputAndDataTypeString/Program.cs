@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("My Addition Calculator\n\n");
+            Console.WriteLine("My Addition Calculator\n");
 
             Console.WriteLine("Enter something: ");
 
