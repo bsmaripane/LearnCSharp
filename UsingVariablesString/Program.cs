@@ -15,6 +15,11 @@
             // Display the string store in myGirlFriendName
             Console.WriteLine(myGirlFriendsName);
 
+            // Overite the string in a variable
+            myGirlFriendsName = "Maxine";
+
+            Console.WriteLine(myGirlFriendsName);
+
             Console.ReadKey();
         }
     }
