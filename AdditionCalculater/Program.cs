@@ -11,10 +11,10 @@
 
             // Prompt user for input of two integers
             Console.WriteLine("Enter the first number: ");
-            firstNumber = Console.Read();
+            firstNumber = int.Parse(Console.ReadLine());
 
             Console.WriteLine("Enter the second number: ");
-            secondNumber = Console.Read();
+            secondNumber = int.Parse(Console.ReadLine());
 
             // Compute the sum
             sum = firstNumber + secondNumber;
