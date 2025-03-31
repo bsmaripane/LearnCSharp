@@ -23,6 +23,9 @@ namespace UsingDecimalNumbersWithDouble
                 // Compute the sum
                 sum = firstNumber + secondNumber;
 
+                // Round sum into 3 decimal points
+                sum = Math.Round(sum, 3);
+
                 // Display the sum
                 Console.WriteLine($"The sum of {firstNumber.ToString(CultureInfo.InvariantCulture)} and {secondNumber.ToString(CultureInfo.InvariantCulture)} is: {sum.ToString(CultureInfo.InvariantCulture)}");
             }
