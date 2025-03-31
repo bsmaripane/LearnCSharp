@@ -24,7 +24,7 @@ namespace UsingDecimalNumbersWithDouble
                 sum = firstNumber + secondNumber;
 
                 // Display the sum
-                Console.WriteLine($"The sum of {firstNumber} and {secondNumber} is: {sum}");
+                Console.WriteLine($"The sum of {firstNumber.ToString(CultureInfo.InvariantCulture)} and {secondNumber.ToString(CultureInfo.InvariantCulture)} is: {sum.ToString(CultureInfo.InvariantCulture)}");
             }
             catch(FormatException)
             {
