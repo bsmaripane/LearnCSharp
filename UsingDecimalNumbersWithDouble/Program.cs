@@ -1,4 +1,6 @@
-﻿namespace UsingDecimalNumbersWithDouble
+﻿using System.Globalization;
+
+namespace UsingDecimalNumbersWithDouble
 {
     internal class Program
     {
@@ -9,19 +11,31 @@
             double secondNumber = 0.0;
             double sum = 0.0;
 
-            // Prompt user for input of two integers
-            Console.WriteLine("Enter the first number: ");
-            firstNumber = int.Parse(Console.ReadLine());
+            try
+            {
+                // Prompt user for input of two numbers
+                Console.WriteLine("Enter the first number: ");
+                firstNumber = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture); // to ensure consistent parsing of decimal numbers
 
-            Console.WriteLine("Enter the second number: ");
-            secondNumber = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter the second number: ");
+                secondNumber = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);  // to ensure consistent parsing of decimal numbers
 
-            // Compute the sum
-            sum = firstNumber + secondNumber;
+                // Compute the sum
+                sum = firstNumber + secondNumber;
 
-            // Display the sum
-            Console.WriteLine($"The sum of {firstNumber} and {secondNumber} is: {sum}");
+                // Display the sum
+                Console.WriteLine($"The sum of {firstNumber} and {secondNumber} is: {sum}");
+            }
+            catch(FormatException)
+            {
+                Console.WriteLine("Invalid input, Please enter a valid number.");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+            }
 
+            // Wait for a key press before closing
             Console.ReadKey();
         }
     }
