@@ -7,6 +7,11 @@
             bool isRainy = false;
             bool hasUmbrella = true;
 
+            // Logical Operators
+            // AND  &&
+            // OR   ||
+            // NOT  !
+
             if (!isRainy)
             {
                 Console.WriteLine("It is raining!");
