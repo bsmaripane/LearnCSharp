@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            bool isRainy = false;
+            bool isRainy = true;
             bool hasUmbrella = true;
             bool isHeavyRain = true;
 
@@ -13,7 +13,23 @@
             // OR   ||
             // NOT  !
 
-            if (isRainy || !isHeavyRain)
+            // Varieants of the OR operator
+            // true  || true -. true
+            // true  || false -> true
+            // false || true -> true
+            // false || false -> false
+
+            // Varients of the AND operator
+            // true  && true -> true
+            // true  && false -> false
+            // false && false -> false
+            // false && false -> false
+
+            // Varients fo NOT operator
+            // !true  -> false
+            // !false -> true
+
+            if (isRainy)
             {
                 Console.WriteLine("It is raining!");
 
