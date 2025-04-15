@@ -13,7 +13,15 @@
             // > greater than
             // >=  greater or equal to
 
-            bool isHigher =  num1 > num2;
+            bool isGreater =  num1 > num2;
+            bool isEqual = num1 == num2;
+            bool isNotEqual = num1 != num2;
+            bool isLess = num1 < num2;
+
+            if (isLess)
+                Console.WriteLine($"{num1} is less than {num2}");
+            else
+                Console.WriteLine($"{num1} is not less than {num2}");
 
             int age = 89;
 
