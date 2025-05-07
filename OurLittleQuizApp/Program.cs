@@ -22,7 +22,7 @@ namespace OurLittleQuizApp
             if (userAnswer1 == answer1)
             {
                 Console.WriteLine("Correct!");
-                score += 1;
+                score++;
             }
             else
             {
@@ -34,7 +34,7 @@ namespace OurLittleQuizApp
             if (userAnswer2 == answer2)
             {
                 Console.WriteLine("Correct!");
-                score += 1;
+                score++;
             }
             else
             {
@@ -46,7 +46,7 @@ namespace OurLittleQuizApp
             if (userAnswer3 == answer3)
             {
                 Console.WriteLine("Correct!");
-                score += 1;
+                score++;
             }
             else
             {
