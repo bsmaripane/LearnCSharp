@@ -8,7 +8,7 @@
             string inputString = Console.ReadLine();
             int num1;
             //int num1 = int.Parse(inputString);
-            bool isNumber = int.TryParse(inputString, out num1);
+            bool isNumber = int.TryParse(inputString, out num1); // TryParse converts a string to an integer safely
 
             if (isNumber)
                 Console.WriteLine("Well done, you entered a number");
