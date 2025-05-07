@@ -19,7 +19,7 @@ namespace OurLittleQuizApp
 
             Console.WriteLine(question1);
             string userAnswer1 = Console.ReadLine();
-            if (userAnswer1.Trim() == answer1)
+            if (userAnswer1.Trim().ToLower() == answer1.ToLower())
             {
                 Console.WriteLine("Correct!");
                 score++;
@@ -31,7 +31,7 @@ namespace OurLittleQuizApp
 
             Console.WriteLine(question2);
             string userAnswer2 = Console.ReadLine();
-            if (userAnswer2.Trim() == answer2)
+            if (userAnswer2.Trim().ToLower() == answer2.ToLower())
             {
                 Console.WriteLine("Correct!");
                 score++;
@@ -43,7 +43,7 @@ namespace OurLittleQuizApp
 
             Console.WriteLine(question3);
             string userAnswer3 = Console.ReadLine();
-            if (userAnswer3.Trim() == answer3)
+            if (userAnswer3.Trim().ToLower() == answer3.ToLower())
             {
                 Console.WriteLine("Correct!");
                 score++;
