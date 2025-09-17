@@ -6,10 +6,10 @@
         {
             Console.WriteLine("Generate a random number!\n");
 
-            // Creating an instance of the Random Class
+            /// Creating an instance of the Random Class
             Random random = new Random();
 
-            // Generate random number between 1 and 50
+            /// Generate random number between 1 and 50
             int randomNumber = random.Next(1, 50);
 
             Console.WriteLine("Guess thr number");
