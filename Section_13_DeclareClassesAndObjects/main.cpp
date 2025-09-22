@@ -25,6 +25,9 @@ int main()
 
 	Player players[]{ Maswi, Hero };
 
+	vector<Player>player_vec{ Maswi };
+	player_vec.push_back(Hero);
+
 	Player* enemy{ nullptr };
 	enemy = new Player;
 	delete enemy;
