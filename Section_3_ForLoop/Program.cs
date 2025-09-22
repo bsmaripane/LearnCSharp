@@ -4,9 +4,9 @@
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 10; i++)
+            for (int counter = 1; counter <= 10; counter++)
             {
-                Console.WriteLine($"I is {i}");
+                Console.WriteLine("Counter is " + counter);
             }
             Console.ReadKey();
         }
