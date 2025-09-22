@@ -29,30 +29,40 @@ namespace Challenge_Rocket_Landing_Simulation
                    \  /
                     \/
                 """;
-            int num = 0;
+          
+            int height = 20;
+            int num = height;
 
-            for (int launch = 20; launch >= 0; launch--)
+            for (int launch = 0; launch <= height; launch++)
             {
-                
-                string repeatNewLine = new string('\n', launch + 1);
-                Console.WriteLine(repeatNewLine);
-                Console.WriteLine(rocket_launching + "\t\t\t" + (num * 10) + " meters");
-                Thread.Sleep(500);
                 Console.Clear();
-                num++;
+                string repeatNewLine = new string('\n', Math.Abs(num - 1));
+                Console.WriteLine(repeatNewLine);
+                Console.WriteLine(rocket_launching + "\t\t\t" + (launch * 10) + " meters");
+                Thread.Sleep(500);
+                num--;
             }
             Console.WriteLine("\nThe rocket has launched. Whoohoo! Another successful launching!");
             Thread.Sleep(3600);
             Console.Clear();
             num = 0;
 
-            for (int launch = 20; launch >= 0; launch--)
-            {          
-                string repeatNewLine = new string('\n', num + 1);
-                Console.WriteLine(repeatNewLine);
-                Console.WriteLine(rocket_landing + "\t\t\t" + (launch * 10) + " meters");
-                Thread.Sleep(500);
+            for (int land = height; land >= 0; land--)
+            {
                 Console.Clear();
+                string repeatNewLine = new string('\n', num + 1);
+                if (land <= 5)
+                {
+                    Console.WriteLine(repeatNewLine);
+                    Console.WriteLine(rocket_launching + "\t\t\t" + (land * 10) + " meters");
+                    Thread.Sleep(500);
+                }
+                else
+                {
+                    Console.WriteLine(repeatNewLine);
+                    Console.WriteLine(rocket_landing + "\t\t\t" + (land * 10) + " meters");
+                    Thread.Sleep(500);
+                }
                 num++;
             }
 
