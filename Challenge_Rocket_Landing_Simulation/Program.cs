@@ -32,7 +32,7 @@ namespace Challenge_Rocket_Landing_Simulation
             for (int launch = 10; launch >= 0; launch--)
             {
                 Console.WriteLine("\n\n" + rocket_landing + "\t\t\t" + (launch * 10) + " meters");
-                Thread.Sleep(1500);
+                //Thread.Sleep(1500);
                 Console.Clear();
             }
             Console.ReadKey();
