@@ -18,6 +18,17 @@ class Player
 	bool is_dead();
 };
 
+class Account
+{
+	// Attribute
+	string name{ "Main Account" };
+	double balance{ 0.00 };
+
+	// Method
+	bool depost(double);
+	bool withdraw(double);
+};
+
 int main()
 {
 	Player Maswi;
@@ -31,6 +42,13 @@ int main()
 	Player* enemy{ nullptr };
 	enemy = new Player;
 	delete enemy;
+
+
+	// Account class
+	Account semape_account;
+	Account maswi_account;
+
+
 
 	cin.get();
 	return 0;
