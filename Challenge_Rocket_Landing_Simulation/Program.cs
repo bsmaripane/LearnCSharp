@@ -18,6 +18,7 @@ namespace Challenge_Rocket_Landing_Simulation
                     \/
                 """;
             int num = 0;
+
             for (int launch = 10; launch >= 0; launch--)
             {          
                 string repeatNewLine = new string('\n', num + 1);
@@ -27,6 +28,8 @@ namespace Challenge_Rocket_Landing_Simulation
                 Console.Clear();
                 num++;
             }
+
+            Console.WriteLine("\nThe rocket has landed. Whoohoo! Another successful landing!");
             Console.ReadKey();
         }
     }
