@@ -23,6 +23,8 @@ int main()
 	Player Maswi;
 	Player Hero;
 
+	Player players[]{ Maswi, Hero };
+
 	Player* enemy{ nullptr };
 	enemy = new Player;
 	delete enemy;
