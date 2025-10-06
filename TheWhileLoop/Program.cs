@@ -6,9 +6,10 @@
         {
             int counter = 0;
 
-            while (counter < 30)
+            while (counter <= 30)
             {
-                Console.WriteLine($"The counter is {counter}");
+                if (counter % 2 == 0)
+                    Console.WriteLine($"The counter is {counter}");
                 counter++;
             }
             Console.ReadKey();
