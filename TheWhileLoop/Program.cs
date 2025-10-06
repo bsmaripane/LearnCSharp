@@ -12,6 +12,13 @@
                     Console.WriteLine($"The counter is {counter}");
                 counter++;
             }
+
+            bool isGood = true;
+            while (isGood)
+            {
+                Console.WriteLine("Hello C# MasterClass");
+                isGood = false;
+            }
             Console.ReadKey();
         }
     }
