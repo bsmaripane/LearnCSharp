@@ -19,6 +19,21 @@
                     Console.WriteLine("# " + 0 + " * ");
             }
 
+
+            string[,] ticTacToeField =
+            {
+                { "O", "X", "X"},
+                { "O", "O", "X"},
+                {"X" , "X", "O"}
+            };
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                    Console.Write(ticTacToeField[i, j] + " ");
+                Console.WriteLine();
+            }
+
             Console.ReadKey();
         }
     }
