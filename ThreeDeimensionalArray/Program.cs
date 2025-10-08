@@ -34,6 +34,9 @@
                 Console.WriteLine();
             }
 
+            foreach (var item  in simple3DArray)
+                Console.Write(item);
+
             Console.ReadKey(true);
         }
     }
