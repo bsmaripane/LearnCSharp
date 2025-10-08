@@ -7,9 +7,11 @@
             int currentScore;
             int sum = 0;
             int counter = 0;
+
+            Console.WriteLine("Enter your student score. Enter -1 to finish!");
             do
             {
-                Console.WriteLine("Enter your student score. Enter -1 to finish!");
+                Console.Write("Student score: ");
                 currentScore = int.Parse(Console.ReadLine());
 
                 if (currentScore != -1)
