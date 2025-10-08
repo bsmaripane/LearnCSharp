@@ -80,11 +80,9 @@ namespace BuildTextAdventureGame4
 
                             for (int i = 1; i <= 3; i++)
                             {
-                                Console.WriteLine($"\t\t{i}");
+                                Console.Write($"\t\t{i}");
                                 Thread.Sleep(1000);
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
-                                Console.Write(new string(' ', Console.WindowWidth));
-                                Console.SetCursorPosition(0, Console.CursorTop - 1);
+                                Console.Write("\r" + new string(' ', $"\t\t{i}".Length) + "\r");
                             }
                             Console.WriteLine("\n\t\tGO\n");
                         }
@@ -112,8 +110,8 @@ namespace BuildTextAdventureGame4
 
                                 if (startAgain) break;
                                 Console.Write($"\t\t{i}");
+                                Thread.Sleep (1000);
                                 Console.Write("\r" + new string(' ', $"\t\t{i}".Length) + "\r");
-                                Thread.Sleep(1000);
                             }
                             if (startAgain)
                                 gameContinues = true;
