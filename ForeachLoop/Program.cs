@@ -2,12 +2,16 @@
 {
     internal class Program
     {
-        static void Main(string[] args) 
+        static void Main(string[] args)
         {
-            List<int> numbers = new List<int> {1, 2, 3, 4, 5, 6, 7};
+            string[] weekDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-            foreach (var number in numbers)
-                Console.WriteLine(number);
+            foreach (var item in weekDays)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ReadKey();
         }
     }
 }
