@@ -2,14 +2,6 @@
 {
     internal class Program
     {
-        //static void PrintValue(int value)
-        //{
-        //    Console.WriteLine($"Integer value: {value}");
-        //}
-        //static void PrintValue(string value)
-        //{
-        //    Console.WriteLine($"String value: {value}");
-        //}
 
         static void PrintValue(object value)
         {
