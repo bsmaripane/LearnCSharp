@@ -42,6 +42,7 @@
             }
             double averageTemp = CalculateAverageTemperature(temps);
             Console.WriteLine($"\nAverage Temperature over {temps.Length} days: {averageTemp:F3} °C");
+            Console.WriteLine($"Most common condition: {MostCommonCondition(conditions)}");
         }
         static double CalculateAverageTemperature(int[] temps)
         {
@@ -53,6 +54,34 @@
             }
 
             return (double)sum / temps.Length;
+        }
+
+        static string MostCommonCondition(string[] conditions)
+        {
+            var count = 0;
+            var mostCommon = conditions[0];
+
+            for (int i = 0; i < conditions.Length; i++)
+            {
+                var tempCount = 0;
+
+                for (int j = 0; j < conditions.Length; j++)
+                {
+                    if (conditions[j] == conditions[i])
+                    {
+                        tempCount++;
+                    }
+                }
+
+                if (tempCount > count)
+                {
+                    count = tempCount;
+                    mostCommon = conditions[i];
+                }
+            }
+                
+            return mostCommon;
+            
         }
     }
 }
