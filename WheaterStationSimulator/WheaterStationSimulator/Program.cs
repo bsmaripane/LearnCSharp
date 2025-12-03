@@ -9,7 +9,7 @@
             Console.WriteLine("Weather Station Simulator!");
 
             Console.Write("Enter the number of days to simulate: ");
-            int days = int.Parse(Console.ReadLine());
+            int days = int.Parse(Console.ReadLine()??"");
 
             int[] temperature = new int[days];
             string[] conditions = { "Sunny", "Cloudy", "Rainy", "Windy", "Stormy" };
