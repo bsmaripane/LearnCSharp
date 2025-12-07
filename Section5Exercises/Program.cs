@@ -70,7 +70,7 @@ namespace Section5Exercises
 
             do
             {
-                Console.Write("Guess a number: ");
+                Console.Write("Guess a secret number: ");
                 string strGuess = Console.ReadLine() ?? "";
                 tries++;
 
@@ -93,9 +93,36 @@ namespace Section5Exercises
 
             } while (!isWin && tries < 4);
 
-            Console.WriteLine( (isWin? "You won" : "You lost") + $"!\nThe number is {randomNumber}");
+            Console.WriteLine( (isWin? "You won" : "You lost") + $"!\nThe secret number is {randomNumber}");
 
-         
+            // 5. A program and ask the user to enter a series of numbers separated by comma.
+            //    Find the maximum of the numbers and display it on the console.
+            Console.WriteLine("Enter numbers separated by commas (e.g., 1, 5, 10, 20):");
+            string input = Console.ReadLine();
+
+            // Check if the input is empty or null
+            if (string.IsNullOrEmpty(input))
+            {
+                Console.WriteLine("No input received.");
+                return;
+            }
+
+            // Process the input string into a List of integers
+            List<int> numbersList = input.Split(',') // Split the string by the comma delimiter
+                                         .Select(s => s.Trim()) // Remove leading/trailing whitespace from each number string
+                                         .Where(s => int.TryParse(s, out _)) // Filter out non-numeric entries safely (C# 7.0+)
+                                         .Select(int.Parse) // Parse the remaining valid strings into integers
+                                         .ToList(); // Convert the result to a List<int>
+
+            // Output the results
+            Console.WriteLine($"\nYou entered {numbersList.Count} valid numbers:");
+            int maxNum = 0;
+            for (var index = 0; index < numbersList.Count; index++)
+            {
+                if (numbersList[index] > maxNum)
+                    maxNum = numbersList[index];
+            }
+            Console.WriteLine($"Maximum number is {maxNum}");
 
             Console.ReadKey();
         }
