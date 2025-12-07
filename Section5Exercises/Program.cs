@@ -61,7 +61,44 @@ namespace Section5Exercises
             }
             Console.WriteLine($"The factorial of {num} is {factorial(num)}");
 
+            // 4. A program that picks a random number between 1 and 10. Give the user 4 chances to guess the number.
+            Random random = new Random();
+            int randomNumber = random.Next(1,11);
+            var tries = 0;
+            var isWin = false;
+            var guess = 0;
+
+            do
+            {
+                Console.Write("Guess a number: ");
+                string strGuess = Console.ReadLine() ?? "";
+                tries++;
+
+                try
+                {
+                    guess = int.Parse(strGuess);
+                }
+                catch ( Exception ex )
+                {
+                    Console.WriteLine($"Exception: {ex.Message}");
+                    continue;
+                }
+
+                if (guess != randomNumber)
+                {
+                    Console.WriteLine("Wrong guess, try again!");
+                }
+                else
+                    isWin = true;
+
+            } while (!isWin && tries < 4);
+
+            Console.WriteLine( (isWin? "You won" : "You lost") + $"!\nThe number is {randomNumber}");
+
+         
+
             Console.ReadKey();
         }
     }
+
 }
