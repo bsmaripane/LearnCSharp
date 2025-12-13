@@ -14,6 +14,9 @@
             Console.WriteLine($"Address of Customer: {lessego.Address}");
             Console.WriteLine($"Contact of Customer: {lessego.ContactNumber}");
 
+            newCustomer.SetDetails("MrHacker", "127.0.0.1", "Kali Linux");
+            Console.WriteLine($"Customer info:\nname: {newCustomer.Name}\naddress: {newCustomer.Address}\ncontact: {newCustomer.ContactNumber}");
+
             Console.ReadKey();
         }
     }

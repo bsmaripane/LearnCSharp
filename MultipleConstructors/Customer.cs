@@ -31,5 +31,13 @@ namespace MultipleConstructors
         {
             Name = name;
         }
+
+        // Class methiod
+        public void SetDetails(string name, string address, string contactNumber)
+        {
+            Name = name;
+            Address = address;
+            ContactNumber = contactNumber;
+        }
     }
 }
