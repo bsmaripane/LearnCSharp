@@ -25,6 +25,15 @@
             // Using a static nested class
             OuterClass.StaticNestedClass.ShowMessage();
 
+            // Use the Partial class
+            Employee employee = new Employee();
+            employee.FirstName = "John";
+            employee.LastName = "Doe";
+            employee.JobTitle = "Software Developer";
+            employee.Salary = 75000.00;
+
+            Console.WriteLine($"Employee details:\nName: {employee.FirstName}  {employee.LastName}\nWork as a {employee.JobTitle} with a salary of R{employee.Salary} p/m.");
+
             Console.ReadKey();
         }
     }
