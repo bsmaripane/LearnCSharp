@@ -14,6 +14,12 @@ namespace MultipleConstructors
         public string ContactNumber { get; set; }
 
         // Class constructor
+        public Customer()
+        {
+            Name = string.Empty;
+            Address = string.Empty;
+            ContactNumber = string.Empty;
+        }
         public Customer(string name, string address, string contactNumber)
         {
             Name = name;
