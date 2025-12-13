@@ -33,6 +33,9 @@
             employee.Salary = 75000.00;
 
             Console.WriteLine($"Employee details:\nName: {employee.FirstName}  {employee.LastName}\nWork as a {employee.JobTitle} with a salary of R{employee.Salary} p/m.");
+            employee.AssignJob("Senior Software Developer");
+            Console.WriteLine($"Employee details:\nName: {employee.FirstName}  {employee.LastName}\nWork as a {employee.JobTitle} with a salary of R{employee.Salary} p/m.");
+
 
             Console.ReadKey();
         }

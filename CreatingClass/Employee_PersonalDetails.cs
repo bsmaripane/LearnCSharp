@@ -9,4 +9,5 @@ public partial class Employee
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
+    partial void OnJobAssigned();
 }

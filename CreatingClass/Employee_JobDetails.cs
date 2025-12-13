@@ -9,4 +9,10 @@ public partial class Employee
 {
     public string JobTitle {  get; set; }
     public double Salary { get; set; }
+    partial void OnJobAssigned() => Console.WriteLine("A new Job has been assigned.");
+    public void AssignJob(string jobTitle)
+    {
+        this.JobTitle = jobTitle;
+        OnJobAssigned();
+    }
 }
