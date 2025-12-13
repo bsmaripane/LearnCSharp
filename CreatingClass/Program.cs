@@ -22,6 +22,8 @@
             innerObject.DisplayMessage();
             innerObject.DisplayOuterField();   
 
+            // Using a static nested class
+            OuterClass.StaticNestedClass.ShowMessage();
 
             Console.ReadKey();
         }

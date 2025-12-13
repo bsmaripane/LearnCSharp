@@ -17,5 +17,10 @@ namespace CreatingClass
             public InnerClass(OuterClass outer) => this.outer = outer;
             public void DisplayOuterField() => Console.WriteLine(outer.outerField);
         }
+
+        public static class StaticNestedClass
+        {
+            public static void ShowMessage() => Console.WriteLine("Hey, I'm from static Nested Class");
+        }
     }
 }
