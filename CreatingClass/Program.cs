@@ -17,8 +17,11 @@
             bmw.Drive();
 
             // Create instance of the inner class
-            OuterClass.InnerClass innerObject = new OuterClass.InnerClass();
+            OuterClass outerObject = new OuterClass();
+            OuterClass.InnerClass innerObject = new OuterClass.InnerClass(outerObject);
             innerObject.DisplayMessage();
+            innerObject.DisplayOuterField();   
+
 
             Console.ReadKey();
         }

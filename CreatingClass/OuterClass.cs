@@ -12,7 +12,10 @@ namespace CreatingClass
 
         public class InnerClass
         {
+            private OuterClass outer;
             public void DisplayMessage() => Console.WriteLine("Hello, I'm a string from InnerClass");
+            public InnerClass(OuterClass outer) => this.outer = outer;
+            public void DisplayOuterField() => Console.WriteLine(outer.outerField);
         }
     }
 }
