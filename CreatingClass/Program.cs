@@ -8,7 +8,7 @@
             Car audi = new Car("RS3", "Audi", true);
             Car bmw = new Car("325is", "BMW");
 
-            Console.Write("Please enter the bBrand name: ");
+            Console.Write("Please enter the car Brand: ");
             audi.Brand = Console.ReadLine() ?? "";
 
             Console.WriteLine($"The brand is {audi.Brand}");
