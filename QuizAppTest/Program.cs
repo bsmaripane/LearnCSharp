@@ -14,8 +14,7 @@
             };
 
             Quiz quiz = new Quiz(questions);
-            quiz.DisplayQuestion(questions[0]);
-            //quiz.StartQuiz();
+            quiz.StartQuiz();
             Console.ReadKey();
         }
     }

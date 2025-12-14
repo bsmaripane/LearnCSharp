@@ -27,10 +27,23 @@ namespace QuizAppTest
                 DisplayQuestion(question, questionNumber);
                 questionNumber++;
                 int userChoice = GetUserChoice();
+
+                if (question.IsCorrectAnswer(userChoice))
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Correct!");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine($"Incorrect!\nThe correct answer was: {question.Answers[question.CorrectAnswerIndex]}");
+                    Console.ResetColor();
+                }
             }
         }
 
-        public void DisplayQuestion(Question question, int num = 1)
+        private void DisplayQuestion(Question question, int num = 1)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("╔════════════════════════════════════════════════════════════════════════╗");
