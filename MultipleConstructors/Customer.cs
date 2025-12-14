@@ -8,6 +8,11 @@ namespace MultipleConstructors
 {
     internal class Customer
     {
+        // Static field to hold the next ID available
+        private static int nextId = 0;
+
+        private readonly int _id;
+
         // Class property
         public string Name { get; set; }
         public string Address { get; set; }
@@ -16,12 +21,14 @@ namespace MultipleConstructors
         // Class constructor
         public Customer()
         {
+            _id = nextId++;
             Name = string.Empty;
             Address = string.Empty;
             ContactNumber = string.Empty;
         }
         public Customer(string name, string address, string contactNumber)
         {
+            _id = nextId++;
             Name = name;
             Address = address;
             ContactNumber = contactNumber;
@@ -29,6 +36,7 @@ namespace MultipleConstructors
 
         public Customer(string name)
         {
+            _id = nextId++;
             Name = name;
         }
 
@@ -38,6 +46,11 @@ namespace MultipleConstructors
             Name = name;
             Address = address;
             ContactNumber = contactNumber;
+        }
+
+        public void GetDetails()
+        {
+            Console.WriteLine($"Customer details\nID: {_id}\nName: {Name}\nAddress: {Address}\nContact: {ContactNumber}");
         }
     }
 }

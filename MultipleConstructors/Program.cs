@@ -9,14 +9,12 @@
             Customer lessego = new Customer("Lesego", "10352 Vergelegen C, JANE FURSE 1085", "+2769 120 0195");
             Customer newCustomer = new Customer();
 
-            Console.WriteLine($"Name of Customer: {belmy.Name}");
-            Console.WriteLine($"Name of Customer: {lessego.Name}");
-            Console.WriteLine($"Address of Customer: {lessego.Address}");
-            Console.WriteLine($"Contact of Customer: {lessego.ContactNumber}");
+            belmy.GetDetails();
+            lessego.GetDetails();
 
             newCustomer.SetDetails("MrHacker", "127.0.0.1", "Kali Linux");
-            Console.WriteLine($"Customer info:\nname: {newCustomer.Name}\naddress: {newCustomer.Address}\ncontact: {newCustomer.ContactNumber}");
-
+            newCustomer.GetDetails();
+        
             Console.ReadKey();
         }
     }
