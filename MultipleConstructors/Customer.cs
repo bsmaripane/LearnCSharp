@@ -33,7 +33,7 @@ namespace MultipleConstructors
         }
 
         // Class methiod
-        public void SetDetails(string name, string address, string contactNumber)
+        public void SetDetails(string name, string address, string contactNumber = "N/A")
         {
             Name = name;
             Address = address;
