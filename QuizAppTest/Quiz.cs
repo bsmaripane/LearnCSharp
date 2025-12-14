@@ -8,5 +8,32 @@ namespace QuizAppTest
 {
     internal class Quiz
     {
+        private Question[] questions;
+        private int score;
+
+        public Quiz(Question[] questions)
+        {
+            
+        }
+
+        public void StartQuiz()
+        {
+
+        }
+
+        private void DisplayQuestion(Question question)
+        {
+
+        }
+
+        private void DisplayResults()
+        {
+
+        }
+
+        private void GetUserChoice()
+        {
+
+        }
     }
 }
