@@ -38,6 +38,8 @@ namespace MultipleConstructors
         {
             _id = nextId++;
             Name = name;
+            Address = "N/A";
+            ContactNumber = "N/A";
         }
 
         // Class methiod
@@ -50,7 +52,7 @@ namespace MultipleConstructors
 
         public void GetDetails()
         {
-            Console.WriteLine($"Customer details\nID: {_id}\nName: {Name}\nAddress: {Address}\nContact: {ContactNumber}");
+            Console.WriteLine($"\nCustomer details\nID: {_id}\nName: {Name}\nAddress: {Address}\nContact: {ContactNumber}");
         }
     }
 }
