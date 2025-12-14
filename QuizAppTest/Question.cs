@@ -8,14 +8,14 @@ namespace QuizAppTest
 {
     internal class Question
     {
-        public string QuestionText { get; }
-        public string[] Answer { get; }
-        public int CorrectAnswerIndex { get; }
+        public string QuestionText { get; set; }
+        public string[] Answers { get; set; }
+        public int CorrectAnswerIndex { get; set; }
 
-        public Question(string questionText, string[] answer, int correctAnswerIndex)
+        public Question(string questionText, string[] answers, int correctAnswerIndex)
         {
             QuestionText = questionText;
-            Answer = answer;
+            Answers = answers;
             CorrectAnswerIndex = correctAnswerIndex;
         }
 

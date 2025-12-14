@@ -6,11 +6,16 @@
         {
             Question[] questions = new Question[]
             {
-
+                new Question(
+                    "What is the capital of Germany?",   // Question text
+                    new string[] {"Paris", "Berlin", "London", "Madrid"},   // Answers array
+                    1   // Correct answer
+                )
             };
 
             Quiz quiz = new Quiz(questions);
-            quiz.StartQuiz();
+            quiz.DisplayQuestion(questions[0]);
+            //quiz.StartQuiz();
             Console.ReadKey();
         }
     }

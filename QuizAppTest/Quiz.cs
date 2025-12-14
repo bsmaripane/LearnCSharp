@@ -18,12 +18,17 @@ namespace QuizAppTest
 
         public void StartQuiz()
         {
-
+            
         }
 
-        private void DisplayQuestion(Question question)
+        public void DisplayQuestion(Question question)
         {
             Console.WriteLine(question.QuestionText);
+
+            for (int i = 0; i < question.Answers.Length; i++)
+            {
+                Console.WriteLine($"{i + 1}. {question.Answers[i]}");
+            }
         }
 
         private void DisplayResults()
