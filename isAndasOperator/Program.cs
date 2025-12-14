@@ -14,6 +14,9 @@
 
             Dog myDog = myPet as Dog;
             Console.WriteLine(myDog != null ? "Successfully cast to Dog." : "Conversion failed.");
+
+            Cat myCat = myPet as Cat;
+            Console.WriteLine(myCat != null ? "Successfully cast to Dog." : "Conversion failed.");
            
             Console.ReadKey();
         }
