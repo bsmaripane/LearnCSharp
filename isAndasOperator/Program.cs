@@ -11,6 +11,9 @@
             object obj = "Hello C# language";
             if (obj is string message)
                 Console.WriteLine($"The message is: {message}");
+
+            Dog myDog = myPet as Dog;
+            Console.WriteLine(myDog != null ? "Successfully cast to Dog." : "Conversion failed.");
            
             Console.ReadKey();
         }
