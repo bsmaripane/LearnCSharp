@@ -14,6 +14,7 @@
 
             newCustomer.SetDetails("MrHacker", "127.0.0.1", "Kali Linux");
             newCustomer.GetDetails();
+            Console.WriteLine(belmy.Id);
         
             Console.ReadKey();
         }

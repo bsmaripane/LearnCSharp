@@ -11,7 +11,11 @@ namespace MultipleConstructors
         // Static field to hold the next ID available
         private static int nextId = 0;
 
+        //Readonly instance field initialised from the constructor
         private readonly int _id;
+
+        // Read only property
+        public int Id { get { return _id; } }
 
         // Class property
         public string Name { get; set; }
@@ -52,7 +56,7 @@ namespace MultipleConstructors
 
         public void GetDetails()
         {
-            Console.WriteLine($"\nCustomer details\nID: {_id}\nName: {Name}\nAddress: {Address}\nContact: {ContactNumber}");
+            Console.WriteLine($"\nCustomer details\nID: {Id}\nName: {Name}\nAddress: {Address}\nContact: {ContactNumber}");
         }
     }
 }
