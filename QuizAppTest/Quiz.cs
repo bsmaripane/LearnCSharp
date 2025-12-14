@@ -37,6 +37,19 @@ namespace QuizAppTest
                 Console.ResetColor();   // resets the foreground (text) color
                 Console.WriteLine($". {question.Answers[i]}");
             }
+
+            if (GetUserChoice() == question.CorrectAnswerIndex)
+            {
+                Console.ForegroundColor= ConsoleColor.Green;
+                Console.WriteLine("Correct");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Incorrect");
+                Console.ResetColor();
+            }
         }
 
         private void DisplayResults()
@@ -51,7 +64,9 @@ namespace QuizAppTest
             int choice = 0;
             while (!int.TryParse(input, out choice) || choice < 1 || choice > 4)
             {
-                Console.WriteLine("Invalidchoice. Please enter a number between 1 and 4: ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Invalid choice. Please enter a number between 1 and 4: ");
+                Console.ResetColor();
                 input = Console.ReadLine() ?? "";
             }
 
