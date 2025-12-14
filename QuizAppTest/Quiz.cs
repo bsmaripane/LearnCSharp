@@ -18,14 +18,23 @@ namespace QuizAppTest
 
         public void StartQuiz()
         {
-            
+            Console.WriteLine("Welcome to the Quiz!");
+            int questionNumber = 1; // to display question numbers
+
+            foreach (var question in questions)
+            {
+                //Console.WriteLine($"Question {questionNumber}:");
+                DisplayQuestion(question, questionNumber);
+                questionNumber++;
+                int userChoice = GetUserChoice();
+            }
         }
 
-        public void DisplayQuestion(Question question)
+        public void DisplayQuestion(Question question, int num = 1)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("╔════════════════════════════════════════════════════════════════════════╗");
-            Console.WriteLine("║                                Question                                ║");
+            Console.WriteLine($"║                                Question {num}                              ║");
             Console.WriteLine("╚════════════════════════════════════════════════════════════════════════╝");
             Console.ResetColor();
             Console.WriteLine(question.QuestionText);
