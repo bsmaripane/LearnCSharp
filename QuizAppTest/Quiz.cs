@@ -36,8 +36,8 @@ namespace QuizAppTest
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Magenta;
-                    Console.WriteLine($"Incorrect!\nThe correct answer was: {question.Answers[question.CorrectAnswerIndex]}");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Incorrect!\nThe correct answer was: {question.CorrectAnswerIndex}. {question.Answers[question.CorrectAnswerIndex]}");
                     Console.ResetColor();
                 }
             }
