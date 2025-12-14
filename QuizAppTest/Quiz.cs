@@ -46,19 +46,6 @@ namespace QuizAppTest
                 Console.ResetColor();   // resets the foreground (text) color
                 Console.WriteLine($". {question.Answers[i]}");
             }
-
-            if (GetUserChoice() == question.CorrectAnswerIndex)
-            {
-                Console.ForegroundColor= ConsoleColor.Green;
-                Console.WriteLine("Correct");
-                Console.ResetColor();
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Incorrect");
-                Console.ResetColor();
-            }
         }
 
         private void DisplayResults()
