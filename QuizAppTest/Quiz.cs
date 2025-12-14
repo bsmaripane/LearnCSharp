@@ -55,7 +55,7 @@ namespace QuizAppTest
                 input = Console.ReadLine() ?? "";
             }
 
-            return choice;
+            return choice - 1; // adjust to 0-indexed array
         }
     }
 }
