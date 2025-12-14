@@ -14,6 +14,12 @@ namespace MultipleConstructors
         //Readonly instance field initialised from the constructor
         private readonly int _id;
 
+        // Backing field for write-only property
+        private string _password;
+
+        // Write-Only property
+        public string Password { set { _password = value; } }
+
         // Read only property
         public int Id { get { return _id; } }
 
@@ -56,7 +62,7 @@ namespace MultipleConstructors
 
         public void GetDetails()
         {
-            Console.WriteLine($"\nCustomer details\nID: {Id}\nName: {Name}\nAddress: {Address}\nContact: {ContactNumber}");
+            Console.WriteLine($"\nCustomer details\nID: {Id}\nName: {Name}\nAddress: {Address}\nContact: {ContactNumber}\nPassword: {_password}");
         }
     }
 }
