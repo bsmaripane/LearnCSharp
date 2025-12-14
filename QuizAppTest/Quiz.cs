@@ -8,12 +8,13 @@ namespace QuizAppTest
 {
     internal class Quiz
     {
-        private Question[] questions;
-        private int score;
+        private Question[] _questions;
+        private int _score;
 
         public Quiz(Question[] questions)
         {
-            this.questions = questions;
+            this._questions = questions;
+            _score = 0;
         }
 
         public void StartQuiz()
@@ -21,7 +22,7 @@ namespace QuizAppTest
             Console.WriteLine("Welcome to the Quiz!");
             int questionNumber = 1; // to display question numbers
 
-            foreach (var question in questions)
+            foreach (var question in _questions)
             {
                 //Console.WriteLine($"Question {questionNumber}:");
                 DisplayQuestion(question, questionNumber);
@@ -33,6 +34,7 @@ namespace QuizAppTest
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Correct!");
                     Console.ResetColor();
+                    _score++;
                 }
                 else
                 {
@@ -41,12 +43,13 @@ namespace QuizAppTest
                     Console.ResetColor();
                 }
             }
+            DisplayResults();
         }
 
         private void DisplayQuestion(Question question, int num = 1)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("╔════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("\n╔════════════════════════════════════════════════════════════════════════╗");
             Console.WriteLine($"║                                Question {num}                              ║");
             Console.WriteLine("╚════════════════════════════════════════════════════════════════════════╝");
             Console.ResetColor();
@@ -63,7 +66,42 @@ namespace QuizAppTest
 
         private void DisplayResults()
         {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("\n╔════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine($"║                                Results                                 ║");
+            Console.WriteLine("╚════════════════════════════════════════════════════════════════════════╝");
+            Console.ResetColor();
+            Console.WriteLine($"Quiz finished. Your score is: {_score} out of {_questions.Length}");
 
+            double percentage = (double)_score / _questions.Length;
+            double[] scoreRange = {0.0, 0.19,0.2,0.39,0.4,0.59,0.6,0.79,0.8};
+
+            if (percentage >= scoreRange[8])
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Excellent!");
+            }
+            else if (percentage >= scoreRange[6] && percentage <= scoreRange[7])
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("Good!");
+            }
+            else if (percentage >= scoreRange[4] && percentage <= scoreRange[5])
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Average!");
+            }
+            else if (percentage >= scoreRange[2] && percentage <= scoreRange[3])
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Below Average!");
+            }
+            else if (percentage >= scoreRange[0] && percentage <= scoreRange[1])
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Poor!");
+            }
+            Console.ResetColor();
         }
 
         private int GetUserChoice()
