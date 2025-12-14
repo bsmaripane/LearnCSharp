@@ -13,6 +13,11 @@
             ChangeValue(ref number);
             Console.WriteLine(number);
 
+            Console.WriteLine("Passing Arguments by Reference - out");
+            int value;
+            SetValue(out value);
+            Console.WriteLine(value);
+
             Console.ReadKey();
         }
 
@@ -24,6 +29,11 @@
         static void ChangeValue(ref int num)
         {
             num = 250;
+        }
+
+        static void SetValue(out int num)
+        {
+            num = 200;
         }
     }
 }
