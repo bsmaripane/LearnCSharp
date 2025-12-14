@@ -1,4 +1,6 @@
-﻿namespace OperatorOverloading
+﻿using System.ComponentModel;
+
+namespace OperatorOverloading
 {
     internal class Program
     {
@@ -11,6 +13,12 @@
             Vector result = v1 + v2;
 
             result.Display();
+
+            Vector vec1 = new Vector(11, 3);
+            Vector vec2 = new Vector(30, 32);
+            Vector vecResult = vec1.Add(vec2);
+
+            vecResult.Display();
 
             Console.ReadKey();
         }

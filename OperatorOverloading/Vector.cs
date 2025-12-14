@@ -17,5 +17,6 @@ namespace OperatorOverloading
         public void Display() => Console.WriteLine($"Vector: ({X}, {Y})");
 
         public static Vector operator +(Vector v1, Vector v2) => new Vector(v1.X+v2.X,v1.Y+v2.Y);
+        public Vector Add(Vector other) => new Vector(this.X+other.X,this.Y+other.Y);
     }
 }
