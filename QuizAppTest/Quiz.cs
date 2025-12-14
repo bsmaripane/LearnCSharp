@@ -13,7 +13,7 @@ namespace QuizAppTest
 
         public Quiz(Question[] questions)
         {
-            
+            this.questions = questions;
         }
 
         public void StartQuiz()
@@ -23,7 +23,7 @@ namespace QuizAppTest
 
         private void DisplayQuestion(Question question)
         {
-
+            Console.WriteLine(question.QuestionText);
         }
 
         private void DisplayResults()
