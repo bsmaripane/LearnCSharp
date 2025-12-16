@@ -44,15 +44,15 @@
             // Sorting a list
             List<int> numbers = new List<int> { 10, 5, 4, 8, 3, 9, 6, 23, 1 };
 
-            Console.Write("\n\nUnordered list: ");
+            Console.Write("\n\nUnsorted list: ");
             foreach (int number in numbers)
-                Console.Write(number);
+                Console.Write(number + " ");
 
             numbers.Sort();
 
-            Console.Write("\n\nOrdered list: ");
+            Console.Write("\n\nSorded list: ");
             foreach (int number in numbers)
-                Console.Write(number);
+                Console.Write($"{number} ");
 
             Console.ReadKey();
         }
