@@ -11,6 +11,9 @@
             // Adding items to the list
             colors.Add("green");
             colors.Add("blue");
+            colors.Add("blue");
+            colors.Add("blue");
+            colors.Add("blue");
             colors.Add("red");
             colors.Add("orange");
             colors.Add("black");
@@ -25,7 +28,15 @@
             IsDeletingSuccessful = colors.Remove("pink");
             Console.WriteLine(IsDeletingSuccessful ? "The item is successfully removed!" : "The item was not found");
 
-            Console.WriteLine("\nCurrent after removing color:");
+            Console.WriteLine("\nCurrent after removing red color:");
+            foreach (string color in colors) 
+                Console.WriteLine(color);
+
+            bool IsBlueDeletingSuccessful = colors.Remove("blue");
+            while (IsBlueDeletingSuccessful)
+                IsBlueDeletingSuccessful = colors.Remove("blue");
+
+            Console.WriteLine("\nCurrent after removing blue color:");
             foreach (string color in colors) 
                 Console.WriteLine(color);
 
