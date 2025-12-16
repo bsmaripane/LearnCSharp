@@ -15,8 +15,16 @@
             colors.Add("orange");
             colors.Add("black");
 
+            Console.WriteLine("\nCurrent color:");
+            foreach (string color in colors)
+                Console.WriteLine(color);
+
+            // Remove item from the list
+            colors.Remove("red");
+
+            Console.WriteLine("\nCurrent after removing color:");
             foreach (string color in colors) 
-                Console.WriteLine($"Current color: {color}");
+                Console.WriteLine(color);
 
             Console.ReadKey();
         }
