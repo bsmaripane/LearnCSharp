@@ -20,7 +20,10 @@
                 Console.WriteLine(color);
 
             // Remove item from the list
-            colors.Remove("red");
+            bool IsDeletingSuccessful = colors.Remove("red");
+            Console.WriteLine(IsDeletingSuccessful ? "The item is successfully removed!" : "The item was not found");
+            IsDeletingSuccessful = colors.Remove("pink");
+            Console.WriteLine(IsDeletingSuccessful ? "The item is successfully removed!" : "The item was not found");
 
             Console.WriteLine("\nCurrent after removing color:");
             foreach (string color in colors) 
