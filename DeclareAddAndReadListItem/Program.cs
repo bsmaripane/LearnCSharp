@@ -6,17 +6,18 @@
         {
             Console.WriteLine("Declare a List, add and read List item!");
             // Declaring a list and initialising
-            List<string > colors = new List<string>();
-
-            // Adding items to the list
-            colors.Add("green");
-            colors.Add("blue");
-            colors.Add("blue");
-            colors.Add("blue");
-            colors.Add("blue");
-            colors.Add("red");
-            colors.Add("orange");
-            colors.Add("black");
+            List<string > colors =
+            [
+                // Adding items to the list
+                "green",
+                "blue",
+                "blue",
+                "blue",
+                "blue",
+                "red",
+                "orange",
+                "black",
+            ];
 
             Console.WriteLine("\nCurrent color:");
             foreach (string color in colors)
