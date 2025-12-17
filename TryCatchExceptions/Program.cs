@@ -21,7 +21,7 @@ namespace TryCatchExceptions
             catch (Exception ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
-                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine(ex.ToString());
             }
             finally
             {
