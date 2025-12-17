@@ -28,7 +28,11 @@
             employees.Add(4, new Employee("Alex Alex", 30, 23435.70));
             employees.Add(5, new Employee("Major Major", 46, 33435.70));
 
-            //
+            // Print the dictionary data
+            foreach (var item in employees)
+            {
+                Console.WriteLine($"ID: {item.Key} Name: {item.Value.Name} Age: {item.Value.Age} Salary: {item.Value.Salary, 2}");
+            }
 
             Console.ReadKey();
         }
