@@ -17,9 +17,15 @@
             };
             products.Add(new Product { Name = "Milk", Price = 17.99 });
 
+            List<Product> cheapProducts = products.Where(p => p.Price < 20.00).ToList();
+
             Console.WriteLine("List of product:");
             foreach(Product p in products) 
                 Console.WriteLine($"{p.Name}: R{p.Price,2}");
+
+            Console.WriteLine("List of cheap products:");
+            foreach (Product item in cheapProducts)
+                Console.WriteLine($"{item.Name}: R{item.Price,2}");
 
             Console.ReadKey();
         }
