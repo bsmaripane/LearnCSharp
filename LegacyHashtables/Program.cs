@@ -24,6 +24,10 @@ namespace LegacyHashtables
             studentTable.Add(student4.Id, student4);
             studentTable.Add(student5.Id, student5);
 
+            Student storedStudent1 = (Student)studentTable[student1.Id];
+
+            Console.WriteLine("Student ID: {0}, Name: {1}, GPA: {2}", storedStudent1.Id, storedStudent1.Name, storedStudent1.GPA);
+
             Console.ReadKey();
         }
     }
