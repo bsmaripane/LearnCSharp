@@ -18,6 +18,19 @@ namespace TryCatchExceptions
                 int num1 = int.Parse(Console.ReadLine() ?? "");
                 result = num2 / num1;
             }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine($"DON'T DIVIDE BY ZERO!! {ex.Message}");
+                result = 10;
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine($"I TOLD YOU TO ENTER A NUMBER! {ex.Message}");
+            }
+            catch (OverflowException ex)
+            {
+                Console.WriteLine("NUMBER TOO HIGH!");
+            }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
