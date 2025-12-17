@@ -46,6 +46,9 @@ namespace DeclareAddAndReadListItem
             // Sorting a list
             List<int> numbers = new List<int> { 10, 5, 4, 8, 3, 9, 6, 23, 1 };
 
+            bool HasLargeNumber = numbers.Any(x => x > 20);
+            Console.WriteLine(HasLargeNumber ? "There are larger numbers in the number list" : "No large numbers in the list");
+
             Console.Write("\n\nUnsorted list: ");
             foreach (int number in numbers)
                 Console.Write(number + " ");
