@@ -12,6 +12,8 @@
                 ["TX"] = "Texas"
             };
 
+            if (codes.TryGetValue("NY", out string state))
+                Console.WriteLine(state);
 
             Console.ReadKey();
         }
