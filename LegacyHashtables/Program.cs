@@ -26,12 +26,12 @@ namespace LegacyHashtables
 
             Student storedStudent1 = (Student)studentTable[student1.Id];
 
-            foreach (DictionaryEntry entry in studentTable)
+        
+            foreach (Student value in studentTable.Values)
             {
-                Student temp = (Student)entry.Value;
-                Console.WriteLine($"Student ID: {temp.Id}");
-                Console.WriteLine($"Student Name: {temp.Name}");                
-                Console.WriteLine($"Student GPA: {temp.GPA}");                
+                Console.WriteLine($"Student ID: {value.Id}");
+                Console.WriteLine($"Student Name: {value.Name}");
+                Console.WriteLine($"Student GPA: {value.GPA}");
             }
 
             //Console.WriteLine("Student ID: {0}, Name: {1}, GPA: {2}", storedStudent1.Id, storedStudent1.Name, storedStudent1.GPA);
