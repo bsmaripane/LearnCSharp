@@ -28,8 +28,15 @@ namespace TryCatchExceptions
                 Console.WriteLine($"Result: {result}");
             }
 
-            Console.Write("Enter your age: ");
-            GetUserAge(Console.ReadLine()??"");
+            try
+            {
+                Console.Write("Enter your age: ");
+                GetUserAge(Console.ReadLine() ?? "");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Exception: {e.Message}");
+            }
 
             Console.ReadKey();
         }
