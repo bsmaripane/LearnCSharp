@@ -5,14 +5,13 @@
         static void Main(string[] args)
         {
             int result = 0;
+            int num2 = 2;
 
             Console.WriteLine("Please enter a number");
-            int num1 = int.Parse(Console.ReadLine()??"");
-            
-            int num2 = 2;
 
             try
             {
+                int num1 = int.Parse(Console.ReadLine() ?? "");
                 result = num2 / num1;
             }
             catch (Exception ex)
