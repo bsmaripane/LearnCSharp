@@ -18,9 +18,10 @@
             {
                 Console.WriteLine($"Error: {ex.Message}");
             }
-            
-
-            Console.WriteLine($"Result: {result}");
+            finally
+            {
+                Console.WriteLine($"Result: {result}");
+            }
 
             Console.ReadKey();
         }
