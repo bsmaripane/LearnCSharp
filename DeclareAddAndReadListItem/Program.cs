@@ -57,7 +57,7 @@ namespace DeclareAddAndReadListItem
                 Console.Write($"{number} ");
 
             // Find item in a List - return  a list of numbers that are 10 and higher
-            List<int> greaterOrEqualToTen = numbers.FindAll(x => x >= 10);
+            List<int> greaterOrEqualToTen = numbers.FindAll(x => x <= 10);
 
             Console.Write("\n\nlist number greater or equal to ten: ");
             foreach (int number in greaterOrEqualToTen)
