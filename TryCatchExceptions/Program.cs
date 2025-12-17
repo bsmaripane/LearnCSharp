@@ -1,4 +1,6 @@
-﻿namespace TryCatchExceptions
+﻿using System.Diagnostics;
+
+namespace TryCatchExceptions
 {
     internal class Program
     {
@@ -6,6 +8,8 @@
         {
             int result = 0;
             int num2 = 2;
+
+            Debug.WriteLine("Main method is running");
 
             Console.WriteLine("Please enter a number");
 
@@ -17,6 +21,7 @@
             catch (Exception ex)
             {
                 Console.WriteLine($"Error: {ex.Message}");
+                Debug.WriteLine(ex.StackTrace);
             }
             finally
             {
