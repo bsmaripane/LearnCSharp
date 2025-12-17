@@ -24,9 +24,9 @@
             // Remove data dfrom the dictionary
             employee.Remove(101);
 
-            foreach (var item in employee)
+            foreach (KeyValuePair<int, string> keyValuePair in employee)
             {
-                Console.WriteLine(item);
+                Console.WriteLine($"ID: {keyValuePair.Key} name: {keyValuePair.Value}");
             }
 
             Console.ReadKey();
