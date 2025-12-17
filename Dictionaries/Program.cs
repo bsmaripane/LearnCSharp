@@ -10,7 +10,8 @@
             employee.Add(101, "John Doe");
             employee.Add(102, "Jane Doe");
 
-
+            string name = employee[101];
+            Console.WriteLine(name);
 
             Console.ReadKey();
         }
