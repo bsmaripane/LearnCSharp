@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("HAS-A Relationship\n");
+            Console.WriteLine("HAS-A Relationship - Inheritance\n");
 
             Car myCar = new Car();
             myCar.Move();   // Inherited from Vehicle
