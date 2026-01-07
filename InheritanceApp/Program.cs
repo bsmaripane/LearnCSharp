@@ -26,4 +26,17 @@
     {
         public void Bark() { Console.WriteLine("Barking..."); }
     }
+
+
+    class Cat : Animal
+    {
+        public void Meow() { Console.WriteLine("Cat is meowing"); } 
+    }
+
+    // A breed of dog
+    class Collie : Dog
+    {
+        public void GoingNuts() { Console.WriteLine("Collie going Nuts"); }
+    }
+
 }
