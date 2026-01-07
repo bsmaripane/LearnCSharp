@@ -7,9 +7,14 @@
             Console.WriteLine("Inheritance App!");
             Dog dog = new Dog();
 
-            dog.Bark();
+            dog.MakeSound();
             dog.Eat();
-            dog.Bark();
+            dog.MakeSound();
+
+            Cat cat = new Cat();
+            cat.MakeSound();
+            cat.Eat();
+            cat.MakeSound();
 
             Console.ReadKey();
         }
@@ -19,18 +24,19 @@
     class Animal
     {
         public void Eat() { Console.WriteLine("Eatng..."); }
+        public virtual void MakeSound() { Console.WriteLine("Animal mkaes a generic sound"); }
     }
 
     // Derived class
     class Dog : Animal
     {
-        public void Bark() { Console.WriteLine("Barking..."); }
+        public override void MakeSound() { Console.WriteLine("Barking..."); }
     }
 
 
     class Cat : Animal
     {
-        public void Meow() { Console.WriteLine("Cat is meowing"); } 
+        public override void MakeSound() { Console.WriteLine("Cat is meowing"); } 
     }
 
     // A breed of dog
