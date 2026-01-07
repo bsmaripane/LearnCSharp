@@ -11,7 +11,14 @@
             dog.MakeSound();
             dog.MakeSound();
 
+            Car audi = new Car();
+            Car bmw = new Car(120);
+            Car kia = new Car();
+            audi.Speed = 157;
 
+            audi.Move();
+            bmw.Move();
+            kia.Move();
 
             Console.ReadKey();
         }
@@ -36,7 +43,7 @@
 
     class Car : Vehicle
     {
-        public override void Move() { Console.WriteLine($"The car is driving at {Speed} KPM"); }
-        public Car(int x) { Speed = x; }
+        public override void Move() { Console.WriteLine($"The car is driving at {Speed} KMH"); }
+        public Car(int x = 30) { Speed = x; }
     }
 }
