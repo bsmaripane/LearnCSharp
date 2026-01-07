@@ -17,5 +17,8 @@
         public virtual void MakeSound() { Console.WriteLine("The animal makes a sound"); }
     }
 
-
+    class Dog : Animal
+    {
+        public sealed override void MakeSound() { Console.WriteLine("The dog barks."); }
+    }
 }
