@@ -1,23 +1,38 @@
 ﻿namespace InterfacesApp
 {
-    public class Animal
+    public interface IPaymentProcessor
     {
-        public virtual void MakeSound() { Console.WriteLine("Some generic animal sound"); }
+        void ProcessPayment(decimal amount);
     }
 
-    public class Dog : Animal
+    public class CreditCardProcessor : IPaymentProcessor
     {
-        public override void MakeSound()
+        public void ProcessPayment(decimal amount)
         {
-            Console.WriteLine("Dog barks");
+            Console.WriteLine($"Processing credit card payment of R{amount}");
         }
     }
 
-    public class Cat : Animal
+    public class PaypalProcessor : IPaymentProcessor
     {
-        public override void MakeSound()
+        public void ProcessPayment(decimal amount)
         {
-            Console.WriteLine("Cat meows");
+            Console.WriteLine($"Processing paypal payment of R{amount}");
+        }
+    }
+
+    public class PaymentService
+    {
+        private readonly IPaymentProcessor _processor;
+
+        public PaymentService(IPaymentProcessor processor)
+        {
+            _processor = processor;
+        }
+
+        public void ProcessOrderPayment(decimal amount)
+        {
+            _processor.ProcessPayment(amount);
         }
     }
 
@@ -25,11 +40,13 @@
     {
         static void Main(string[] args)
         {
-            Animal dog = new Dog();
-            dog.MakeSound();
+            IPaymentProcessor creditCardProcessor = new CreditCardProcessor();
+            PaymentService paymentService = new PaymentService(creditCardProcessor);
+            paymentService.ProcessOrderPayment(459.79m);
 
-            Animal cat = new Cat();
-            cat.MakeSound();
+            IPaymentProcessor paypalProcessor = new PaypalProcessor();
+            paymentService = new PaymentService(paypalProcessor);
+            paymentService.ProcessOrderPayment(349.99m);
 
             Console.ReadKey();
         }
