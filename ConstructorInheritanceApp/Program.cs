@@ -7,6 +7,9 @@
             Employee maxine = new Employee("Maxine", 29, "Teacher", 1345);
             maxine.DisplayEmployeeInfo();
 
+            Manager felicia = new Manager("Felicia", 29, "Senior Teacher", 9474, 9);
+            felicia.DisplayManagerInfo();
+
             Console.ReadKey();
         }
     }
@@ -45,6 +48,21 @@
         {
             DisplayPersonInfo();
             Console.WriteLine($"Job Title: {JobTitle}, Employee ID: {EmployeeID}");
+        }
+    }
+
+    public class Manager : Employee
+    {
+        public int TeamSize { get; private set; }
+        public Manager(string name, int age, string jobTitle, int employeeID, int teamSize) : base(name, age, jobTitle, employeeID)
+        {
+            TeamSize = teamSize ;
+        }
+
+        public void DisplayManagerInfo()
+        {
+            DisplayEmployeeInfo();
+            Console.WriteLine($"Team Size: {TeamSize}");
         }
     }
 }
