@@ -1,30 +1,35 @@
 ﻿namespace InterfacesApp
 {
-    public interface IAnimal
+    public class Animal
     {
-        void MakeSound();
-        void Eat(string food);
+        public virtual void MakeSound() { Console.WriteLine("Some generic animal sound"); }
     }
 
-    public class Dog : IAnimal
+    public class Dog : Animal
     {
-        public void Eat(string food)
-        {
-            Console.WriteLine($"Dog eat {food}");
-        }
-
-        public void MakeSound()
+        public override void MakeSound()
         {
             Console.WriteLine("Dog barks");
         }
     }
+
+    public class Cat : Animal
+    {
+        public override void MakeSound()
+        {
+            Console.WriteLine("Cat meows");
+        }
+    }
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            Dog dog = new Dog();
-            dog.Eat("bones");
+            Animal dog = new Dog();
             dog.MakeSound();
+
+            Animal cat = new Cat();
+            cat.MakeSound();
 
             Console.ReadKey();
         }
