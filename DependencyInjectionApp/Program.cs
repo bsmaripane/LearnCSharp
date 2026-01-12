@@ -13,10 +13,11 @@
         private Hammer _hammer;
         private Saw _saw;
 
-        public Builder()
+        // Constructor Dependency Injection (DI)
+        public Builder(Hammer hammer, Saw saw)
         {
-            _hammer = new Hammer();    // Builder is responsible for creating its dependenies
-            _saw = new Saw();
+            _hammer = hammer;
+            _saw = saw;
         }
 
         public void BuilHouse() 
@@ -36,7 +37,9 @@
     {
         static void Main(string[] args)
         {
-            Builder builder = new Builder();
+            Hammer hammer = new Hammer();
+            Saw saw = new Saw();
+            Builder builder = new Builder(hammer, saw);
             builder.BuilHouse();
 
             Console.ReadKey();
