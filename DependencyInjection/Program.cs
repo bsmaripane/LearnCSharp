@@ -30,6 +30,21 @@
             UserService userService = new UserService(emailService);
             userService.RegisterUser("John Doe");
 
+            // Registering Dependencies in ASP.NET Core
+            var builder = WebApplication.CreateBuilder(args);
+
+            // Register services
+            builder.Services.AddScoped<IEmailService, EmailService>();
+            builder.Services.AddScoped<UserService>();
+
+            var app = builder.Build();
+
+            // Resolve dependencies
+            var userService = app.Services.GetRequiredService<IEmailService>();
+            userService.RegisterUser("Jane Doe");
+
+            app.Run();
+
             Console.ReadKey();
         }
     }
