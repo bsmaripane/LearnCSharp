@@ -1,14 +1,19 @@
 ﻿namespace DependencyInjection
 {
-    public class EmailService
+    public interface IEmailService
+    {
+        void SendEmail(string message);
+    }
+
+    public class EmailService : IEmailService
     {
         public void SendEmail(string message) { Console.WriteLine($"Sending email: {message}"); }
     }
 
     public class UserService
     {
-        private EmailService _emailService;
-        public UserService() { _emailService = new EmailService(); }   // Directly creating the dependancy
+        private readonly IEmailService _emailService;
+        public UserService(IEmailService emailService) { _emailService = emailService; }   // Injecting dependancy via constructor
 
         public void RegisterUser(string name)
         {
@@ -21,9 +26,9 @@
     {
         static void Main(string[] args)
         {
-            UserService userService = new UserService();
+            IEmailService emailService = new EmailService();
+            UserService userService = new UserService(emailService);
             userService.RegisterUser("John Doe");
-
 
             Console.ReadKey();
         }
