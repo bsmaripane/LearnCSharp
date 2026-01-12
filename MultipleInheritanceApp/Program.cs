@@ -1,0 +1,30 @@
+﻿namespace MultipleInheritanceApp
+{
+    public interface IPrintable
+    {
+        void Print();
+    }
+
+    public interface IScannable
+    {
+        void Scan();
+    }
+
+    public class MultiFunctionPrinter : IPrintable, IScannable
+    {
+        public void Print() { Console.WriteLine("Printing documents"); }
+        public void Scan() { Console.WriteLine("Scanning documents"); }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            MultiFunctionPrinter printer = new MultiFunctionPrinter();
+            printer.Print();
+            printer.Scan();
+
+            Console.ReadKey();
+        }
+    }
+}
