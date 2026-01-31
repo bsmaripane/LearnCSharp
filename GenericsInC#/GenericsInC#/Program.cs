@@ -2,16 +2,12 @@
 {
     internal class Program
     {
-        static void PrintArray(int[] numbersArray)
+        static void PrintArray<T>(T[] array)
         {
-            foreach (var number in numbersArray)
-                Console.WriteLine(number);
+            foreach (var element in array)
+                Console.WriteLine(element);
         }
-        static void PrintArray(string[] wordsArray)
-        {
-            foreach (var word in wordsArray)
-                Console.WriteLine(word);
-        }
+     
 
         static void Main(string[] args)
         {
