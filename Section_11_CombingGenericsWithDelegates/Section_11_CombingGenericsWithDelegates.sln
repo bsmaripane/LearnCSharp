@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section_11_CombingGenericsWithDelegates", "Section_11_CombingGenericsWithDelegates\Section_11_CombingGenericsWithDelegates.csproj", "{9B9EDAB2-65C0-4EE3-A3E8-646BBB9B4B91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B9EDAB2-65C0-4EE3-A3E8-646BBB9B4B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B9EDAB2-65C0-4EE3-A3E8-646BBB9B4B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B9EDAB2-65C0-4EE3-A3E8-646BBB9B4B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B9EDAB2-65C0-4EE3-A3E8-646BBB9B4B91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7A2ED95-0992-4D89-91C2-5B8C58FC9753}
+	EndGlobalSection
+EndGlobal
