@@ -31,12 +31,13 @@
             // 3. Invocation:
             notifyDelegate("Morning Delegate");
 
+            // Creating a multicast delegate
             Logger logger = new Logger();
             LogHandler logHandler = logger.LogToConsole;
-            logHandler("Logging to console");
+            logHandler += logger.LogToFile;
 
-            logHandler = logger.LogToFile;
-            logHandler("Logging to a file");
+            // invoking the multicast delegate
+            logHandler("Log this info");
 
             Console.ReadKey();
         }
