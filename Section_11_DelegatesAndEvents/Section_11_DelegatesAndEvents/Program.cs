@@ -50,8 +50,13 @@
             }
 
             // remove multicast delegate
-            logHandler -= logger.LogToFile;
-
+            if (IsMethodInDelegate(logHandler, logger.LogToFile))
+            {
+                logHandler -= logger.LogToFile;
+                Console.WriteLine("LogToFile method removed");
+            }
+            else
+                Console.WriteLine("LogToFile not found");
             InvokeSafely(logHandler, "After removing logToFile");
 
             Console.ReadKey();
@@ -69,6 +74,21 @@
 
             if (tempLogHander != null)
                 tempLogHander(message);
+        }
+
+        static bool IsMethodInDelegate(LogHandler logHandler, LogHandler method)
+        {
+            if (logHandler == null) return false;
+
+            foreach (var item in logHandler.GetInvocationList())
+            {
+                if (item == (Delegate)method)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
