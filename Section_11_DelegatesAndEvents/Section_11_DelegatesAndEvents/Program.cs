@@ -39,10 +39,20 @@
             // invoking the multicast delegate
             logHandler("Log this info");
 
+            foreach (LogHandler handler in logHandler.GetInvocationList())
+            {
+                try
+                {
+                    handler("Event occurred with error handling");
+                }
+                catch (Exception ex)
+                { Console.WriteLine($"Exception caught: {ex.Message}"); }
+            }
+
             // remove multicast delegate
             logHandler -= logger.LogToFile;
 
-            logHandler("After removing logToFile");
+            InvokeSafely(logHandler, "After removing logToFile");
 
             Console.ReadKey();
         }
@@ -51,6 +61,14 @@
         static void ShowMessage(string message)
         {
             Console.WriteLine(message);
+        }
+
+        static void InvokeSafely(LogHandler logHandler, string message)
+        {
+            LogHandler tempLogHander = logHandler;
+
+            if (tempLogHander != null)
+                tempLogHander(message);
         }
     }
 }
