@@ -27,11 +27,38 @@
         }
     }
 
+    public class TemperatureAlert
+    {
+        public void OnTemperatureChanged(string message)
+        {
+            Console.WriteLine($"Temperature Alert: {message}");
+        }
+    }
+
+    public class TemperatureWarning
+    {
+        public void OnTemperatureChanged(string message)
+        {
+            Console.WriteLine($"Temperature Warning: {message}");
+        }
+    }
+
+
+
     internal class Program
     {
         static void Main(string[] args)
         {
+            TemperatureMonitor monitor = new TemperatureMonitor();
+            TemperatureAlert alert = new TemperatureAlert();
+            TemperatureWarning warning = new TemperatureWarning();
+            monitor.OnTemperatureChanged += alert.OnTemperatureChanged;
+            monitor.OnTemperatureChanged += warning.OnTemperatureChanged;
 
+            monitor.Temperature = 29;
+
+            Console.Write("Enter current temperature: ");
+            monitor.Temperature = int.Parse(Console.ReadLine() ?? "");
 
             Console.ReadKey();
         }
