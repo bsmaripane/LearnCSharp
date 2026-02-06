@@ -16,7 +16,11 @@
                 if (_temperature > 30)
                 {
                     // Raise EVENT!!!
-                    RaiseTemperatureChangedEvent("Temperature is above threshold!");
+                    RaiseTemperatureChangedEvent("Hot - Temperature is above threshold!");
+                }
+                else if (_temperature < 15)
+                {
+                    RaiseTemperatureChangedEvent("Cold - Temperature is below threshold!");
                 }
             }
         }
