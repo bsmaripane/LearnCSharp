@@ -31,6 +31,7 @@
 
     class Student
     {
+        // Student depends on an idea (interface)
         IWritingTool _tool;
 
         public Student (IWritingTool tool)
