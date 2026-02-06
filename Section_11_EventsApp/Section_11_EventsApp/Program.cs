@@ -7,13 +7,13 @@
         // It signifies that the method is not just a regular method but one that is called when a specific event occurs.
         public event Notify OnNotify;
 
-        public void RaisEvent(string message)
+        public void RaiseEvent(string message)
         {
             OnNotify?.Invoke(message);  // Invoke the event if there are any subscribers
         }
     }
 
-    public class EvenSubcriber
+    public class EventSubcriber
     {
         public void OnEvenRaised(string message)
         {
@@ -25,7 +25,12 @@
     {
         static void Main(string[] args)
         {
-            
+            EventPublisher publisher = new EventPublisher();
+            EventSubcriber subcriber = new EventSubcriber();
+
+            publisher.OnNotify += subcriber.OnEvenRaised;
+
+            publisher.RaiseEvent("Test");
             
             Console.ReadKey();
         }
