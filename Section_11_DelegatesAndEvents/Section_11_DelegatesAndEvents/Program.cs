@@ -39,6 +39,11 @@
             // invoking the multicast delegate
             logHandler("Log this info");
 
+            // remove multicast delegate
+            logHandler -= logger.LogToFile;
+
+            logHandler("After removing logToFile");
+
             Console.ReadKey();
         }
 
