@@ -15,13 +15,12 @@ namespace SimpleSynchronousVsAsynchronous
             Console.WriteLine("Asynchronous Programming");
 
 
-            Thread t = new Thread(() =>
+            Task.Run(() =>
             {
                 Console.WriteLine("Running on another thread");
                 _ = GetData();
                 Console.WriteLine("Thread completed!");
             });
-            t.Start();
 
             Console.ReadKey();
         }
