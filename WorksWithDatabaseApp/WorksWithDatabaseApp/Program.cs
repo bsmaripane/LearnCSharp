@@ -15,6 +15,7 @@ namespace WorksWithDatabaseApp
 
                 // 1. Reading data
                 // Ensure "Name" is the correct column name in your "students" table
+<<<<<<< HEAD
                 using (SqlCommand command = new SqlCommand("SELECT * FROM students", connection))
                 { 
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -25,6 +26,16 @@ namespace WorksWithDatabaseApp
                         }
                     }
                 } // 'using' block
+=======
+                SqlCommand command = new SqlCommand("SELECT * FROM students", connection);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Console.WriteLine(reader["first_name"]);
+                    }
+                }
+>>>>>>> 6943d531da07c824a212e49e3c84054fc370e0ec
 
                 // 2. Insert data 
                 string insertQuery = "INSERT INTO students(first_name) VALUES ('Belicia')";
