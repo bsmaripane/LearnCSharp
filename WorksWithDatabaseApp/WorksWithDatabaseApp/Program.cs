@@ -7,7 +7,7 @@ namespace WorksWithDatabaseApp
         static void Main(string[] args)
         {
             // Database connection 
-            string connectionString = "";
+            string connectionString = "Server=MARIPANEBS\\SQLEXPRESS;Database=shop;Integrated Security=True;";
 
             // Open database communication
             SqlConnection connection = new SqlConnection(connectionString);
