@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36930.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithDatabase_Clean_Async_Using", "WorkingWithDatabase_Clean_Async_Using\WorkingWithDatabase_Clean_Async_Using.csproj", "{888066EC-8A1E-4CC9-967C-96966822004F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{888066EC-8A1E-4CC9-967C-96966822004F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888066EC-8A1E-4CC9-967C-96966822004F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888066EC-8A1E-4CC9-967C-96966822004F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888066EC-8A1E-4CC9-967C-96966822004F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A2AD3CB-0AB1-45DF-86DD-33B9B40AB274}
+	EndGlobalSection
+EndGlobal
