@@ -13,7 +13,7 @@ namespace WorkingWithDatabase_Clean_Async_Using
             {
                 await connection.OpenAsync();
 
-                using (SqlCommand command = new SqlCommand("SELECT * FROM customers", connection))
+                using (SqlCommand command = new SqlCommand("SELECT * FROM customers ORDER BY last_name ASC", connection))
                 {
                     Console.WriteLine("Customer ID\tFirst Name\tLast Name\tEmail Address");
                     using (SqlDataReader reader = await command.ExecuteReaderAsync())
