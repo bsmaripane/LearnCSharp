@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace WorkingWithDatabase_Clean_Async_Using
 {
@@ -24,9 +25,9 @@ namespace WorkingWithDatabase_Clean_Async_Using
             }
         }
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            _ = GetCustomersAsync();
+            await GetCustomersAsync();
 
             Console.ReadKey();
         }
