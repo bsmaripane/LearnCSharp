@@ -1,16 +1,18 @@
-﻿namespace SimpleSynchronousVsAsynchronous
+﻿using System.Threading.Tasks;
+
+namespace SimpleSynchronousVsAsynchronous
 {
     internal class Program
     {
-        public static void GetData()
+        public static async Task GetData()
         {
-            Thread.Sleep(5000);
+            await Task.Delay(5000);
             Console.WriteLine("Data Loaded");
         }
         static void Main(string[] args)
         {
-            GetData();
-            Console.WriteLine("Synchronous Programming");
+            _ = GetData();
+            Console.WriteLine("Asynchronous Programming");
 
             Console.ReadKey();
         }
