@@ -6,30 +6,32 @@ namespace WorksWithDatabaseApp
     {
         static void Main(string[] args)
         {
-            // Database connection 
-            string connectionString = "Server=MARIPANEBS\\SQLEXPRESS;Database=shop;Integrated Security=True;";
+            // Updated connection string with TrustServerCertificate=True
+            string connectionString = "Server=MARIPANEBS\\SQLEXPRESS;Database=shop;Integrated Security=True;TrustServerCertificate=True;";
 
-            // Open database communication
-            SqlConnection connection = new SqlConnection(connectionString);
-            connection.Open();
-
-            // SQL command
-            SqlCommand command = new SqlCommand("SELECT * FROM students", connection);
-
-            // Reading data
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                Console.WriteLine(reader["Name"]);
-            }
+                connection.Open();
 
-            // Insert data into database
-            SqlCommand insertCommand = new SqlCommand("INSERT INTO students(first_name) VALUES ('Belicia')", connection);
-            insertCommand.ExecuteNonQuery();
+                // 1. Reading data
+                // Ensure "Name" is the correct column name in your "students" table
+                SqlCommand command = new SqlCommand("SELECT * FROM students", connection);
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Console.WriteLine(reader["first_name"]);
+                    }
+                }
 
-            // Closing database connection
-            connection.Close();
+                // 2. Insert data 
+                string insertQuery = "INSERT INTO students(first_name) VALUES ('Belicia')";
+                SqlCommand insertCommand = new SqlCommand(insertQuery, connection);
+                insertCommand.ExecuteNonQuery();
+
+                Console.WriteLine("Insert successful!");
+            } // Connection closes automatically here due to 'using' block
+
 
             Console.ReadKey();
         }
