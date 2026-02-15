@@ -16,18 +16,23 @@ namespace StudentApp.Tests
 
             var student = new Student
             {
-                FirstName = "Felicia",
-                LastName = "Maripane",
-                CourseCode = "EDU101",
+                FirstName = "Maxine",
+                LastName = "van der Merwe",
+                CourseCode = "EDU123",
                 RegistrationDate = DateTime.Today,
-                CourseFee = 67340
+                CourseFee = 65000
             };
 
             // Act
             await repository.AddStudentAsync(student);
+            var savedStudent = await repository.GetStudentByNameAsync(
+                student.FirstName,
+                student.LastName);
 
             // Assert
-            Assert.True(true);
+            Assert.NotNull(savedStudent);
+            Assert.Equal("Maxine", savedStudent.FirstName);
+            Assert.Equal("van der Merwe", savedStudent.LastName);
         }
     }
 }
