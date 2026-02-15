@@ -39,5 +39,41 @@ namespace StudentApp.Data
                 }
             }
         }
+
+        public async Task<Student?> GetStudentByNameAsync(string firstName, string lastName)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string sql = @"
+                            SELECT TOP 1 * 
+                            FROM Students
+                            WHERE FirstName = @FirstName AND LastName = @LastName";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@FirstName", firstName);
+                    command.Parameters.AddWithValue("@LastName", lastName);
+
+                    await connection.OpenAsync();
+
+                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            return new Student
+                            {
+                                StudentID = (int)reader["StudentID"],
+                                FirstName = reader["FirstName"].ToString()!,
+                                LastName = reader["LastName"].ToString()!,
+                                CourseCode = reader["CourseCode"].ToString()!,
+                                RegistrationDate = (DateTime)reader["RegistrationDate"],
+                                CourseFee = (decimal)reader["CourseFee"]
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
     }
 }
