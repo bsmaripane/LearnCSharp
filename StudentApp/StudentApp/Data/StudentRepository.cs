@@ -35,7 +35,7 @@ namespace StudentApp.Data
                     command.Parameters.AddWithValue("@CourseFee", student.CourseFee);
 
                     await connection.OpenAsync();
-                    await command.ExecuteNonQueryAsync();
+                    //await command.ExecuteNonQueryAsync();
                 }
             }
         }
