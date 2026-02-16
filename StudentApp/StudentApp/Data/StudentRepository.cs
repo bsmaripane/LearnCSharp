@@ -94,9 +94,37 @@ namespace StudentApp.Data
             }
         }
 
-        public async Task GetAllStudentsAsync()
+        public async Task<List<Student>> GetAllStudentsAsync()
         {
-            throw new NotImplementedException();
+            var students = new List<Student>();
+
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT * FROM Students";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    await connection.OpenAsync();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            students.Add(new Student
+                            {
+                                StudentID = (int)reader["StudentID"],
+                                FirstName = reader["FirstName"].ToString()!,
+                                LastName = reader["LastName"].ToString()!,
+                                CourseCode = reader["CourseCode"].ToString()!,
+                                RegistrationDate = (DateTime)reader["RegistrationDate"],
+                                CourseFee = (decimal)reader["CourseFee"]
+                            });
+                        }
+                    }
+                }
+            }
+
+            return students;
         }
     }
 }
