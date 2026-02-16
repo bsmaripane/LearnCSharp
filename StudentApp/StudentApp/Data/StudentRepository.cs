@@ -8,7 +8,7 @@ using StudentApp.Models;
 
 namespace StudentApp.Data
 {
-    public class StudentRepository
+    public class StudentRepository : IStudentRepository
     {
         private readonly string _connectionString;
 
