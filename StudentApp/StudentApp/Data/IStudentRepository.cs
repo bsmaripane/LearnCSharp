@@ -7,7 +7,7 @@ using StudentApp.Models;
 
 namespace StudentApp.Data
 {
-    internal interface IStudentRepository
+    public interface IStudentRepository
     {
         Task AddStudentAsync(Student student);
         Task<Student?> GetStudentByNameAsync(string firstName, string lastName);
