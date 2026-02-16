@@ -37,5 +37,30 @@ namespace StudentApp.Tests
             // Cleanup
             await repository.DeleteStudentByNameAsync(student.FirstName, student.LastName);
         }
+
+        [Fact]
+        public async Task GetAllStudentsAsync_Should_Return_Students()
+        {
+            string connectionString = "Server=MARIPANEBS\\SQLEXPRESS;Database=StudentDB;Integrated Security=True;TrustServerCertificate=True;";
+
+            var repository = new StudentRepository(connectionString);
+
+            var student = new Student
+            {
+                FirstName = "Belicia",
+                LastName = "Student",
+                CourseCode = "TDD01",
+                RegistrationDate = DateTime.Today,
+                CourseFee = 60000
+            };
+
+            await repository.AddStudentAsync(student);
+            var students = await repository.GetAllStudentsAsync();
+
+            Assert.Contains(students, s => s.FirstName == "Belicia" && s.LastName == "Student");
+
+            // cleanup
+            await repository.DeleteStudentByNameAsync("Belicia", "Student");
+        }
     }
 }

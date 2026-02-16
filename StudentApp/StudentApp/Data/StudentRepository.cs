@@ -93,5 +93,10 @@ namespace StudentApp.Data
                 }
             }
         }
+
+        public async Task GetAllStudentsAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
