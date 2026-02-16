@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StudentApp.Models;
+using StudentApp.Data;
+using StudentApp.Service;
 using Xunit;
 
 namespace StudentApp.Tests
@@ -17,11 +19,11 @@ namespace StudentApp.Tests
             var fakeRepo = new FakeOrderRepository();
 
             fakeRepo.Orders = new List<Order>
-            (
-                new Order { CustomerId = 1, Amount = 100},
-                new Order { CustomerId = 1, Amount = 200},
-                new Order { CustomerId = 2, Amount = 500}
-            );
+            {
+                new Order { CustomerId = 1, Amount = 100 },
+                new Order { CustomerId = 1, Amount = 200 },
+                new Order { CustomerId = 2, Amount = 500 }
+            };
 
             var service = new SalesService(fakeRepo);
 
