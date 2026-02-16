@@ -33,6 +33,9 @@ namespace StudentApp.Tests
             Assert.NotNull(savedStudent);
             Assert.Equal("Maxine", savedStudent.FirstName);
             Assert.Equal("van der Merwe", savedStudent.LastName);
+
+            // Cleanup
+            await repository.DeleteStudentByNameAsync(student.FirstName, student.LastName);
         }
     }
 }

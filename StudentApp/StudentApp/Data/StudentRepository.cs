@@ -35,7 +35,7 @@ namespace StudentApp.Data
                     command.Parameters.AddWithValue("@CourseFee", student.CourseFee);
 
                     await connection.OpenAsync();
-                    //await command.ExecuteNonQueryAsync();
+                    await command.ExecuteNonQueryAsync();
                 }
             }
         }
@@ -74,6 +74,24 @@ namespace StudentApp.Data
                 }
             }
             return null;
+        }
+
+        public async Task DeleteStudentByNameAsync(string firstName, string lastName)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                string sql = @"
+                            DELETE FROM Students
+                            WHERE FirstName = @FirstName AND LastName = @LastName";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@FirstName", firstName);
+                    command.Parameters.AddWithValue("@LastName", lastName);
+
+                    await connection.OpenAsync();
+                    await command.ExecuteNonQueryAsync();
+                }
+            }
         }
     }
 }
