@@ -20,6 +20,11 @@
         }
     }
 
+    public class Light
+    {
+        public void TurnOn() { Console.WriteLine("Light turned on"); }
+    }
+
     internal class Program
     {
         // Delegate
