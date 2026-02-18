@@ -39,6 +39,14 @@
             MyDelegate del = SayHello;
             del();
 
+            // Connect everything
+            IButton button = new Button();
+            Light light = new Light();
+
+            button.OnClick += light.TurnOn();
+
+            button.Click();
+
             Console.ReadKey();
         }
     }
