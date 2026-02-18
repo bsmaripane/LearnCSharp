@@ -11,7 +11,7 @@
 
     public class Button : IButton
     {
-        public event ClickHandler OnClick;
+        public event ClickHandler? OnClick;
 
         public void Click()
         {
