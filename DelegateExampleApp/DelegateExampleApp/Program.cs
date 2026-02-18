@@ -25,6 +25,22 @@
         public void TurnOn() { Console.WriteLine("Light turned on"); }
     }
 
+    // Contoller depends on IButton
+    public class Controller
+    {
+        private readonly IButton _button;
+        public Controller(IButton button)
+        {
+            _button = button;
+            _button.OnClick += HandleClick;
+        }
+
+        private void HandleClick()
+        {
+            Console.WriteLine("Controller received click event");
+        }
+    }
+
     internal class Program
     {
         // Delegate
@@ -44,6 +60,10 @@
             Light light = new Light();
 
             button.OnClick += light.TurnOn;
+
+            button.Click();
+
+            Controller controller = new Controller(button);
 
             button.Click();
 
