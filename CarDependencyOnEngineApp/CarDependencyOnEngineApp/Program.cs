@@ -1,18 +1,39 @@
 ﻿namespace CarDependencyOnEngineApp
 {
-    public class Engine
+    public interface IEngine
+    {
+        void Start();
+    }
+
+    public class PetrolEngine : IEngine
     {
         public void Start()
         {
-            Console.WriteLine("Starting an engine");
+            Console.WriteLine("Petrol engine started");
+        }
+    }
+
+    public class DieselEngine : IEngine
+    {
+        public void Start()
+        {
+            Console.WriteLine("Diesel engine started");
+        }
+    }
+
+    public class ElectricEngine : IEngine
+    {
+        public void Start()
+        {
+            Console.WriteLine("Electric engine started");
         }
     }
 
     public class Car
     {
-        private Engine _engine;
+        private IEngine _engine;
 
-        public Car(Engine engine)   // Engine is given from outside
+        public Car(IEngine engine)   // Inject interface
         {
             _engine = engine;
         }
@@ -28,10 +49,20 @@
     {
         static void Main(string[] args)
         {
-            Engine engine = new Engine();
-            Car audi = new Car(engine);
+            // IEngine creates engines 
+            IEngine petrolEngine = new PetrolEngine();
+            IEngine dieselEngine = new DieselEngine();
+            IEngine electricEngine = new ElectricEngine();
 
+            // Inject engines into car
+            Car audi = new Car(petrolEngine);
+            Car toyota = new Car(dieselEngine);
+            Car tasla = new Car(electricEngine);
+
+            // Car calls start() through IEngine
             audi.Drive();
+            toyota.Drive();
+            tasla.Drive();
 
             Console.ReadKey();
         }
