@@ -10,11 +10,16 @@
 
     public class Car
     {
-        private Engine engine = new Engine();   // Car creates the engine
+        private Engine _engine;
+
+        public Car(Engine engine)   // Engine is given from outside
+        {
+            _engine = engine;
+        }
 
         public void Drive()
         {
-            engine.Start();
+            _engine.Start();
             Console.WriteLine("Car is driving");
         }
     }
@@ -23,6 +28,10 @@
     {
         static void Main(string[] args)
         {
+            Engine engine = new Engine();
+            Car audi = new Car(engine);
+
+            audi.Drive();
 
             Console.ReadKey();
         }
