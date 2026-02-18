@@ -1,5 +1,8 @@
 ﻿namespace DelegateExampleApp
 {
+    // Delegates + Events
+    public delegate void ClickHandler();
+
     internal class Program
     {
         // Delegate
