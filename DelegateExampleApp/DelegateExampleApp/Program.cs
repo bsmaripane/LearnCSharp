@@ -43,7 +43,7 @@
             IButton button = new Button();
             Light light = new Light();
 
-            button.OnClick += light.TurnOn();
+            button.OnClick += light.TurnOn;
 
             button.Click();
 
