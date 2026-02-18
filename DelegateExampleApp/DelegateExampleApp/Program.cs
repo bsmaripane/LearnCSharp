@@ -9,6 +9,17 @@
         void Click();
     }
 
+    public class Button : IButton
+    {
+        public event ClickHandler OnClick;
+
+        public void Click()
+        {
+            Console.WriteLine("Button clicked");
+            OnClick?.Invoke();
+        }
+    }
+
     internal class Program
     {
         // Delegate
