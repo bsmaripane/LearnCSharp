@@ -3,6 +3,12 @@
     // Delegates + Events
     public delegate void ClickHandler();
 
+    public interface IButton
+    {
+        event ClickHandler OnClick;
+        void Click();
+    }
+
     internal class Program
     {
         // Delegate
