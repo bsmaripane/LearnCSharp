@@ -37,7 +37,7 @@ namespace WPF_DataBindingApp
             InitializeComponent();
 
             this.DataContext = person;
-            ListBoxNames.ItemsSource = People;
+            ListBoxPeople.ItemsSource = People;
         }
 
     //    private void Button_Click(object sender, RoutedEventArgs e)
