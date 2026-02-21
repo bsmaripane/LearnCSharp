@@ -23,19 +23,21 @@ namespace WPF_DataBindingApp
             Age = 18,
         };
 
+        public List<Person> People = new List<Person>()
+        {
+            new Person{Name = "Belmy", Age = 30},
+            new Person{Name = "Felicia", Age = 29},
+            new Person{Name = "Maashele", Age = 53},
+            new Person{Name = "Lesego", Age = 11},
+            new Person{Name = "Kganya", Age = 4}
+        };
+
         public MainWindow()
         {
             InitializeComponent();
 
             this.DataContext = person;
-            ListBoxNames.ItemsSource = new List<string>()
-            { 
-                "Belmy",
-                "Felicia",
-                "Lesego",
-                "Maashele",
-                "Kganya"
-            };
+            ListBoxNames.ItemsSource = People;
         }
 
     //    private void Button_Click(object sender, RoutedEventArgs e)
