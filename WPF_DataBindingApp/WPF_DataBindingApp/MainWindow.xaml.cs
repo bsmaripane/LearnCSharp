@@ -28,12 +28,20 @@ namespace WPF_DataBindingApp
             InitializeComponent();
 
             this.DataContext = person;
+            ListBoxNames.ItemsSource = new List<string>()
+            { 
+                "Belmy",
+                "Felicia",
+                "Lesego",
+                "Maashele",
+                "Kganya"
+            };
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string personData = $"{person.Name} is {person.Age} years old" ;
-            MessageBox.Show(personData);
-        }
+    //    private void Button_Click(object sender, RoutedEventArgs e)
+    //    {
+    //        string personData = $"{person.Name} is {person.Age} years old" ;
+    //        MessageBox.Show(personData);
+    //    }
     }
 }

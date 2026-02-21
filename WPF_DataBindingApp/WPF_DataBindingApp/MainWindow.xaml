@@ -5,28 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_DataBindingApp"
         mc:Ignorable="d"
-        Title="Data Binding" Height="150" Width="265">
+        Title="Data Binding" Height="350" Width="350">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="1" Grid.Column="1" Margin="2" Content="Name"/>
-        <TextBox Text="{Binding Path=Name, Mode=OneTime}" Grid.Row="1" Grid.Column="2" Margin="2"/>
-        <Label Grid.Row="2" Grid.Column="1" Margin="2" Content="Age"/>
-        <TextBox Text="{Binding Path=Age, Mode=OneTime}" Grid.Row="2" Grid.Column="2" Margin="2"/>
-        <Button Click="Button_Click" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Content="Info"/>
+        <ListBox x:Name="ListBoxNames" Grid.Row="1" Grid.Column="1"/>
+
     </Grid>
 </Window>
