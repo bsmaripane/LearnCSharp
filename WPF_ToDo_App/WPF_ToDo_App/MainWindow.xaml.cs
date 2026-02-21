@@ -20,5 +20,10 @@ namespace WPF_ToDo_App
         {
             InitializeComponent();
         }
+
+        private void AddTodoButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
