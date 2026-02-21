@@ -40,10 +40,21 @@ namespace WPF_DataBindingApp
             ListBoxPeople.ItemsSource = People;
         }
 
-    //    private void Button_Click(object sender, RoutedEventArgs e)
-    //    {
-    //        string personData = $"{person.Name} is {person.Age} years old" ;
-    //        MessageBox.Show(personData);
-    //    }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedItems = ListBoxPeople.SelectedItems;
+
+            foreach (var item in selectedItems)
+            {
+                var person = (Person)item;
+                MessageBox.Show($"Name: { person.Name}, age: {person.Age} years");
+            }
+        }
+
+        //    private void Button_Click(object sender, RoutedEventArgs e)
+        //    {
+        //        string personData = $"{person.Name} is {person.Age} years old" ;
+        //        MessageBox.Show(personData);
+        //    }
     }
 }
