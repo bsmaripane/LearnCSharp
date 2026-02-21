@@ -19,6 +19,8 @@ namespace WPF_ContentControlLoginApp
         public MainWindow()
         {
             InitializeComponent();
+
+            MainContent.Content = new LoginView();
         }
     }
 }

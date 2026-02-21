@@ -24,5 +24,10 @@ namespace WPF_ContentControlLoginApp
         {
             InitializeComponent();
         }
+
+        private void LoginButton_Clicked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
