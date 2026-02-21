@@ -32,7 +32,8 @@ namespace WPF_DataBindingApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Data binding");
+            string personData = $"{person.Name} is {person.Age} years old" ;
+            MessageBox.Show(personData);
         }
     }
 }

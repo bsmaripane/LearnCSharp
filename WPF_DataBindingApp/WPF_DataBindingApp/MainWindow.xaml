@@ -24,9 +24,9 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="1" Grid.Column="1" Margin="2" Content="Name"/>
-        <TextBox Grid.Row="1" Grid.Column="2" Margin="2"/>
+        <TextBox Text="{Binding Name, Mode=OneWay}" Grid.Row="1" Grid.Column="2" Margin="2"/>
         <Label Grid.Row="2" Grid.Column="1" Margin="2" Content="Age"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Margin="2"/>
+        <TextBox Text="{Binding Age, Mode=OneWay}" Grid.Row="2" Grid.Column="2" Margin="2"/>
         <Button Click="Button_Click" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Content="Info"/>
     </Grid>
 </Window>
