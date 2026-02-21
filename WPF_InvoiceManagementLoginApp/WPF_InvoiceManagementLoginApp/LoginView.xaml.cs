@@ -41,5 +41,10 @@ namespace WPF_InvoiceManagementLoginApp
             else
                 MessageBox.Show("Environment varable not found");
         }
+
+        public void OnPasswordChanged(object sender, EventArgs e)
+        {
+            LoginButton.IsEnabled = !string.IsNullOrEmpty(PasswordBox.Password);
+        }
     }
 }
