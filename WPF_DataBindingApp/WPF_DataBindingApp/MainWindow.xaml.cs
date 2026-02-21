@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_DataBindingApp.Data;
 
 namespace WPF_DataBindingApp
 {
@@ -16,9 +17,17 @@ namespace WPF_DataBindingApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        Person person = new Person()
+        {
+            Name = "Test",
+            Age = 18,
+        };
+
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = person;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
