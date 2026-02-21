@@ -25,9 +25,9 @@
         </Grid.RowDefinitions>
 
         <Button Click="AddTodoButton_Click" Grid.Row="5" Grid.Column="1" Content="Create Todo"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Cursor="IBeam" Foreground="White" Background="Black"/>
+        <TextBox x:Name="TodoInput" Grid.Row="3" Grid.Column="1" Cursor="IBeam" Foreground="White" Background="Black"/>
         <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto">
-            <StackPanel Background="#FF72F380"></StackPanel>
+            <StackPanel x:Name="TodoList" Background="#FF72F380"></StackPanel>
         </ScrollViewer>
     </Grid>
 </Window>
