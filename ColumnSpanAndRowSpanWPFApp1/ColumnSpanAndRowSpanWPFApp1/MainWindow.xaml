@@ -25,7 +25,7 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="1" Grid.Column="2" Content="Title of App" />
-        <Label Grid.Row="2" Grid.Column="2" Content="Sample Text" />
+        <Label Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" Content="Sample Text Today is a beautiful day while I have a flu." />
         <Button Grid.Row="3" Grid.Column="2" Content="A" />
         <Button Grid.Row="3" Grid.Column="4" Content="B" />
 
