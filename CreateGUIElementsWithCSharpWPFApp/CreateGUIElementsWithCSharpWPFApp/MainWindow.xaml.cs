@@ -20,14 +20,12 @@ namespace CreateGUIElementsWithCSharpWPFApp
         {
             InitializeComponent();
 
-            Button myButton = new Button();
-            myButton.Content = "Test";
-
-            Grid.SetRow(myButton, 3);
-            Grid.SetColumn(myButton, 4);
-
-            Grid myGrid = (Grid)FindName("myGrid");
-            myGrid.Children.Add(myButton);
+           
         }
-    }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("A button clicked");
+        }
+    };
 }
