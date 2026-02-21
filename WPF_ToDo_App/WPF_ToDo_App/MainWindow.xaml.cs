@@ -25,7 +25,19 @@ namespace WPF_ToDo_App
         {
             string todoText = TodoInput.Text;
 
-            MessageBox.Show(todoText);
+            if (!string.IsNullOrEmpty(todoText))
+            {
+                TextBlock todoItem = new TextBlock
+                {
+                    Text = todoText,
+                    Margin = new Thickness(10),
+                    Foreground = new SolidColorBrush(Colors.Black)
+                };
+
+                TodoList.Children.Add(todoItem);
+                TodoInput.Clear();
+
+            }
         }
     }
 }
