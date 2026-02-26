@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF__CurrencyConverter_StaticApp"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         Title="Currency Converter" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
     <Grid>
@@ -38,10 +39,16 @@
             <Label Content="Converted Currency" Height="40" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
             <Label Name="lblCurreny" Content="" Height="40" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Height="60" Width="800" VerticalAlignment="Top">
             <Label Content="Enter Amount : " Height="40" Width="150" Margin="35 0 0 0" VerticalAlignment="Bottom" Foreground="White" FontSize="20"/>
             <Label Content="From :" Height="40" Width="150" Margin="110 0 0 0" VerticalAlignment="Bottom" Foreground="White" FontSize="20"/>
             <Label Content="To :" Height="40" Width="150" Margin="130 0 0 0" VerticalAlignment="Bottom" Foreground="White" FontSize="20"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Height="90" Width="800" VerticalAlignment="Bottom">
+            <TextBox Name="txtCurrency" PreviewTextInput="NumberValidationTextBox" Height="30" Width="200" Margin="40 0 0 0" VerticalContentAlignment="Center" VerticalAlignment="Top" FontSize="18"/>
+            <ComboBox Name="cmbFromCurrency" Height="30" Width="170" Margin="60 0 40 0" VerticalContentAlignment="Center" VerticalAlignment="Top" MaxDropDownHeight="150" FontSize="18"/>
+            <fa:ImageAwesome Icon="Exchange" Height="30" Width="30" VerticalAlignment="Top" Foreground="White"/>
+            <ComboBox Name="cmbToCurrency" Height="30" Width="170" Margin="40 0 0 0" VerticalContentAlignment="Center" VerticalAlignment="Top" MaxDropDownHeight="150" FontSize="18"/>
         </StackPanel>
         
     </Grid>
