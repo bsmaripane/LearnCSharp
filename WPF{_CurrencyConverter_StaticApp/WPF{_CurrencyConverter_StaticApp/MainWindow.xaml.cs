@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -93,8 +94,8 @@ namespace WPF_CurrencyConverter_StaticApp
 
         private void NumberValidationTextBox(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
-            // Add number validation logic here
-
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
 
         private void ClearControls()
