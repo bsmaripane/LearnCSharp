@@ -31,5 +31,9 @@
                 </Rectangle.Fill>
             </Rectangle>
         </Border>
+        <StackPanel Grid.Row="0" Width="1000" Height="50" Orientation="Horizontal">
+            <Label Content="Currency Converter" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Foreground="#ec2075"/>
+        </StackPanel>
+        
     </Grid>
 </Window>
