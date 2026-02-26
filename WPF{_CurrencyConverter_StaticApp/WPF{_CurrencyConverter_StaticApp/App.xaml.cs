@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace WPF__CurrencyConverter_StaticApp
+namespace WPF_CurrencyConverter_StaticApp
 {
     /// <summary>
     /// Interaction logic for App.xaml

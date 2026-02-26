@@ -10,7 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF__CurrencyConverter_StaticApp
+namespace WPF_CurrencyConverter_StaticApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -21,6 +21,7 @@ namespace WPF__CurrencyConverter_StaticApp
         {
             InitializeComponent();
             lblCurreny.Content = "Start Currency Converter";
+            BindCurrency();
         }
 
         private void BindCurrency()
@@ -52,8 +53,50 @@ namespace WPF__CurrencyConverter_StaticApp
 
         private void Convert_Click(object sender, RoutedEventArgs e)
         {
-            lblCurreny.Content = "Clicked convert button";
-            // Add conversion logic here
+            double ConvertedValue;
+
+            if (txtCurrency.Text == null || txtCurrency.Text.Trim() == "")
+            {
+                MessageBox.Show("Please Enter Currency", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                txtCurrency.Focus();
+                return;
+            }
+            else if (cmbFromCurrency.SelectedValue == null || cmbFromCurrency.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please Select Currency From", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                cmbFromCurrency.Focus();
+                return;
+            }
+            else if (cmbToCurrency.SelectedValue == null || cmbToCurrency.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please Select Currency To", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                cmbToCurrency.Focus();
+                return;
+            }
+
+            if (cmbFromCurrency.Text == cmbToCurrency.Text)
+            {
+                ConvertedValue = double.Parse(txtCurrency.Text);
+                lblCurreny.Content = $"{cmbToCurrency.Text} {ConvertedValue.ToString("N3")}";
+            }
+            else
+            {
+                // Fix: Ensure .ToString() is not called on null, and parse safely
+                string? fromValueStr = cmbFromCurrency.SelectedValue?.ToString();
+                string? toValueStr = cmbToCurrency.SelectedValue?.ToString();
+                string? amountStr = txtCurrency.Text;
+
+                if (!double.TryParse(fromValueStr, out double fromValue) ||
+                    !double.TryParse(amountStr, out double amount) ||
+                    !double.TryParse(toValueStr, out double toValue))
+                {
+                    MessageBox.Show("Invalid input for conversion.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                ConvertedValue = fromValue * amount / toValue;
+                lblCurreny.Content = $"{cmbToCurrency.Text} {ConvertedValue.ToString("N3")}";
+            }
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
