@@ -34,6 +34,15 @@
         <StackPanel Grid.Row="0" Width="1000" Height="50" Orientation="Horizontal">
             <Label Content="Currency Converter" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Foreground="#ec2075"/>
         </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" Height="80" Width="1000">
+            <Label Content="Converted Currency" Height="40" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="20"/>
+            <Label Name="lblCurreny" Content="" Height="40" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Label Content="Enter Amount : " Height="40" Width="150" Margin="35 0 0 0" VerticalAlignment="Bottom" Foreground="White" FontSize="20"/>
+            <Label Content="From :" Height="40" Width="150" Margin="110 0 0 0" VerticalAlignment="Bottom" Foreground="White" FontSize="20"/>
+            <Label Content="To :" Height="40" Width="150" Margin="130 0 0 0" VerticalAlignment="Bottom" Foreground="White" FontSize="20"/>
+        </StackPanel>
         
     </Grid>
 </Window>
