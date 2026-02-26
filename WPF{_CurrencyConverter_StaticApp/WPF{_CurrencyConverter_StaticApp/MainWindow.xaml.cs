@@ -81,20 +81,7 @@ namespace WPF_CurrencyConverter_StaticApp
             }
             else
             {
-                // Fix: Ensure .ToString() is not called on null, and parse safely
-                string? fromValueStr = cmbFromCurrency.SelectedValue?.ToString();
-                string? toValueStr = cmbToCurrency.SelectedValue?.ToString();
-                string? amountStr = txtCurrency.Text;
-
-                if (!double.TryParse(fromValueStr, out double fromValue) ||
-                    !double.TryParse(amountStr, out double amount) ||
-                    !double.TryParse(toValueStr, out double toValue))
-                {
-                    MessageBox.Show("Invalid input for conversion.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return;
-                }
-
-                ConvertedValue = fromValue * amount / toValue;
+                ConvertedValue = (double.Parse(cmbFromCurrency.SelectedValue.ToString()) * double.Parse(txtCurrency.Text)) / double.Parse(cmbToCurrency.SelectedValue.ToString());
                 lblCurreny.Content = $"{cmbToCurrency.Text} {ConvertedValue.ToString("N3")}";
             }
         }
