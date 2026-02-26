@@ -88,16 +88,24 @@ namespace WPF_CurrencyConverter_StaticApp
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            // Add clear logic here
-            lblCurreny.Content = "";
-            cmbFromCurrency.SelectedIndex = 0;
-            cmbToCurrency.SelectedIndex = 0;
+            ClearControls();
         }
 
         private void NumberValidationTextBox(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
             // Add number validation logic here
 
+        }
+
+        private void ClearControls()
+        {
+            txtCurrency.Text = string.Empty;
+            if (cmbFromCurrency.Items.Count > 0)
+                cmbFromCurrency.SelectedIndex = 0;
+            if (cmbToCurrency.Items.Count > 0)
+                cmbToCurrency.SelectedIndex = 0;
+            lblCurreny.Content = "";
+            txtCurrency.Focus();
         }
     }
 }
