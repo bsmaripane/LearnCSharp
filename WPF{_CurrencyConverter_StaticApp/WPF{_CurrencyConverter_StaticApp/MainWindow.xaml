@@ -51,7 +51,14 @@
             <ComboBox Name="cmbToCurrency" Height="30" Width="170" Margin="40 0 0 0" VerticalContentAlignment="Center" VerticalAlignment="Top" MaxDropDownHeight="150" FontSize="18"/>
         </StackPanel>
         <StackPanel Grid.Row="3" Height="100" Width="1000" Orientation="Horizontal">
-            <Button Name="btnConvert" Content="Convert" Click="Convert_Click" Height="40" Width="150" Margin="350 0 20 0" Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}"/>
+            <Button Name="btnConvert" Content="Convert" Click="Convert_Click" Height="40" Width="150" Margin="350 0 20 0" Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}">
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#ec2075" Offset="0.0"/>
+                        <GradientStop Color="#f33944" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </StackPanel>
         
     </Grid>
