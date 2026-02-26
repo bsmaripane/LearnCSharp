@@ -19,6 +19,22 @@ namespace WPF__CurrencyConverter_StaticApp
         public MainWindow()
         {
             InitializeComponent();
+            lblCurreny.Content = "Hello World";
+        }
+
+        private void Convert_Click(object sender, RoutedEventArgs e)
+        {
+            // Add conversion logic here
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            // Add clear logic here
+        }
+
+        private void NumberValidationTextBox(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            // Add number validation logic here
         }
     }
 }
