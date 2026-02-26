@@ -90,6 +90,8 @@ namespace WPF_CurrencyConverter_StaticApp
         {
             // Add clear logic here
             lblCurreny.Content = "";
+            cmbFromCurrency.SelectedIndex = 0;
+            cmbToCurrency.SelectedIndex = 0;
         }
 
         private void NumberValidationTextBox(object sender, System.Windows.Input.TextCompositionEventArgs e)
