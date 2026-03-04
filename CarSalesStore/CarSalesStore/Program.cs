@@ -13,6 +13,8 @@ namespace CarSalesStore
             builder.Services.AddDbContext<CarSalesStoreContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("CarSalesStoreDb") ?? throw new InvalidOperationException("Connection string 'CarSalesStoreContext' not found.")));
 
+            builder.Services.AddScoped<ICarRepository, CarRepository>();
+
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
