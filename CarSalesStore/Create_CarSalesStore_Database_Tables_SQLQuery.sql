@@ -29,3 +29,9 @@ CREATE TABLE Sales (
 	FOREIGN KEY (CarId) REFERENCES Cars(CarId),
 	FOREIGN KEY (CustomerId) REFERENCES Customers(CustomerId)
 );
+GO
+
+INSERT INTO Cars(Brand, Model, Price, Stock)
+VALUES('Toyota', 'Corolla', 200000, 5),
+      ('BMW', 'M3', 850000, 3)
+GO
