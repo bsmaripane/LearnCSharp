@@ -2,7 +2,7 @@
 
 namespace CarSalesStore
 {
-    public class CarSalesStoreContext
+    public class CarSalesStoreContext : DbContext
     {
         public CarSalesStoreContext(DbContextOptions<CarSalesStoreContext> options) : base(options) { }
 
