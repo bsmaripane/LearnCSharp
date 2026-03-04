@@ -1,4 +1,4 @@
-﻿namespace CarSalesStore
+﻿namespace CarSalesStore.Models
 {
     public class Customer
     {

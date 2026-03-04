@@ -1,4 +1,7 @@
 
+using CarSalesStore.Data;
+using CarSalesStore.Repositories.Implementations;
+using CarSalesStore.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarSalesStore

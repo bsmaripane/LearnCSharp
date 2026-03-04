@@ -1,6 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CarSalesStore.Data;
+using CarSalesStore.Models;
+using CarSalesStore.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace CarSalesStore
+namespace CarSalesStore.Repositories.Implementations
 {
     public class CarRepository : ICarRepository
     {

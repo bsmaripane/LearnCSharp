@@ -1,4 +1,6 @@
-﻿namespace CarSalesStore
+﻿using CarSalesStore.Models;
+
+namespace CarSalesStore.Repositories.Interfaces
 {
     public interface ICarRepository
     {

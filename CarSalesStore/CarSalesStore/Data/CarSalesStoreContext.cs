@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CarSalesStore.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace CarSalesStore
+namespace CarSalesStore.Data
 {
     public class CarSalesStoreContext : DbContext
     {
