@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 namespace CarSalesStore
 {
     public class Program
@@ -8,6 +10,8 @@ namespace CarSalesStore
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<CarSalesStoreContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("CarSalesStoreDb") ?? throw new InvalidOperationException("Connection string 'CarSalesStoreContext' not found.")));
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
