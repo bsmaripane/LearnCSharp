@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace WPF_ZooManagerApp
 {
@@ -21,11 +23,34 @@ namespace WPF_ZooManagerApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        SqlConnection sqlConnection;
+
         public MainWindow()
         {
             InitializeComponent();
 
-            string connectionString = ConfigurationManager.ConnectionStrings["WPF_ZooManager.Properties.Settings.TutorialsDbConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager
+                .ConnectionStrings["WPF_ZooManagerApp.Properties.Settings.TutorialsDbConnectionString"]
+                .ConnectionString;
+            sqlConnection = new SqlConnection(connectionString);
+            ShowZoos();
+        }
+
+        private void ShowZoos()
+        {
+            string query = "SELECT * FROM Zoo";
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+            using(sqlDataAdapter)
+            {
+                DataTable zooTable = new DataTable();
+
+                sqlDataAdapter.Fill(zooTable);
+                listZoos.DisplayMemberPath = "Location";    // Which information of the Table in the DataTable should be shown in our ListBox?
+                listZoos.SelectedValuePath = "Id";  // Which value should be delivered, when an item from our ListBox is selected?
+                listZoos.ItemsSource =zooTable.DefaultView; // Reference to the Data the ListBox  should populate
+            }
         }
     }
 }
