@@ -9,6 +9,8 @@
     <Grid>
         <Label Content="Zoo List" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <ListBox Name="listZoos"  Margin="10,47,0,0" Height="175" HorizontalAlignment="Left" VerticalAlignment="Top" Width="158"/>
+        <Label Content="Associated Animals List" HorizontalAlignment="Left" Margin="202,10,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="ListAssociatedAnimals"  Margin="202,41,0,0" Height="175" HorizontalAlignment="Left" VerticalAlignment="Top" Width="158"/>
 
     </Grid>
 </Window>
