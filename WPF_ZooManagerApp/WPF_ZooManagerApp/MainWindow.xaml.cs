@@ -38,10 +38,9 @@ namespace WPF_ZooManagerApp
 
         private void ShowZoos()
         {
-            string query = "SELECT * FROM Zoo";
-
             try
             {
+                string query = "SELECT * FROM Zoo";
 
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
 
@@ -59,6 +58,42 @@ namespace WPF_ZooManagerApp
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void ShowAssociatedAnimals()
+        { 
+            try
+            {
+                string query = "SELECT * " +
+                    "FROM Animal a " +
+                    "INNER JOIN ZooAnimal za ON a.Id = za.AnimalId " +
+                    "WHERE za.ZooId = @ZooId";
+
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+                using (sqlDataAdapter)
+                {
+
+                    sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
+                    DataTable zooTable = new DataTable();
+
+                    sqlDataAdapter.Fill(zooTable);
+                    listZoos.DisplayMemberPath = "Location";    // Which information of the Table in the DataTable should be shown in our ListBox?
+                    listZoos.SelectedValuePath = "Id";  // Which value should be delivered, when an item from our ListBox is selected?
+                    listZoos.ItemsSource = zooTable.DefaultView; // Reference to the Data the ListBox  should populate
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void listZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MessageBox.Show("Listzoos was clicked");
         }
     }
 }
