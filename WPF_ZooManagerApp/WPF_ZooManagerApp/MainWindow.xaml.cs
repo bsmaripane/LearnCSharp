@@ -124,42 +124,42 @@ namespace WPF_ZooManagerApp
 
         private void DeleteZoo_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Delete Zoo button");
         }
 
         private void RemoveAnimal_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Remove Animal button");
         }
 
         private void AddZoo_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Add Zoo button");
         }
 
         private void AddAnimal_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Add Animal button");
         }
 
         private void UpdateZoo_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Update Zoo button");
         }
 
         private void UpdateAnimal_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Update Animal button");
         }
 
         private void AddAnimalToZoo_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Add Animal to Zoo button");
         }
 
         private void DeleteAnimal_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Delete Animal button");
         }
     }
 }
