@@ -121,5 +121,45 @@ namespace WPF_ZooManagerApp
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void DeleteZoo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveAnimal_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddZoo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddAnimal_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateZoo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateAnimal_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddAnimalToZoo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteAnimal_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
