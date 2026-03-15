@@ -77,12 +77,12 @@ namespace WPF_ZooManagerApp
                 {
 
                     sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
-                    DataTable zooTable = new DataTable();
+                    DataTable animalTable = new DataTable();
 
-                    sqlDataAdapter.Fill(zooTable);
-                    listZoos.DisplayMemberPath = "Location";    // Which information of the Table in the DataTable should be shown in our ListBox?
-                    listZoos.SelectedValuePath = "Id";  // Which value should be delivered, when an item from our ListBox is selected?
-                    listZoos.ItemsSource = zooTable.DefaultView; // Reference to the Data the ListBox  should populate
+                    sqlDataAdapter.Fill(animalTable);
+                    listAssociatedAnimals.DisplayMemberPath = "Name";
+                    listAssociatedAnimalss.SelectedValuePath = "Id";
+                    listAssociatedAnimals.ItemsSource = animalTable.DefaultView;
                 }
             }
             catch (Exception ex)
