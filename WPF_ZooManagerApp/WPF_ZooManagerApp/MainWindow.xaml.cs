@@ -40,16 +40,24 @@ namespace WPF_ZooManagerApp
         {
             string query = "SELECT * FROM Zoo";
 
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
-
-            using(sqlDataAdapter)
+            try
             {
-                DataTable zooTable = new DataTable();
 
-                sqlDataAdapter.Fill(zooTable);
-                listZoos.DisplayMemberPath = "Location";    // Which information of the Table in the DataTable should be shown in our ListBox?
-                listZoos.SelectedValuePath = "Id";  // Which value should be delivered, when an item from our ListBox is selected?
-                listZoos.ItemsSource =zooTable.DefaultView; // Reference to the Data the ListBox  should populate
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+                using (sqlDataAdapter)
+                {
+                    DataTable zooTable = new DataTable();
+
+                    sqlDataAdapter.Fill(zooTable);
+                    listZoos.DisplayMemberPath = "Location";    // Which information of the Table in the DataTable should be shown in our ListBox?
+                    listZoos.SelectedValuePath = "Id";  // Which value should be delivered, when an item from our ListBox is selected?
+                    listZoos.ItemsSource = zooTable.DefaultView; // Reference to the Data the ListBox  should populate
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }
