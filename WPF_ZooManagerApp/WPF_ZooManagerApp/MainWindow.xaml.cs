@@ -34,6 +34,7 @@ namespace WPF_ZooManagerApp
                 .ConnectionString;
             sqlConnection = new SqlConnection(connectionString);
             ShowZoos();
+            ShowAnimals();
         }
 
         private void ShowZoos()
@@ -49,9 +50,9 @@ namespace WPF_ZooManagerApp
                     DataTable zooTable = new DataTable();
 
                     sqlDataAdapter.Fill(zooTable);
-                    listZoos.DisplayMemberPath = "Location";    // Which information of the Table in the DataTable should be shown in our ListBox?
-                    listZoos.SelectedValuePath = "Id";  // Which value should be delivered, when an item from our ListBox is selected?
-                    listZoos.ItemsSource = zooTable.DefaultView; // Reference to the Data the ListBox  should populate
+                    listZoos.DisplayMemberPath = "Location";
+                    listZoos.SelectedValuePath = "Id";
+                    listZoos.ItemsSource = zooTable.DefaultView;
                 }
             }
             catch (Exception ex)
@@ -94,6 +95,31 @@ namespace WPF_ZooManagerApp
         private void ListZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
           ShowAssociatedAnimals();
+        }
+
+
+        private void ShowAnimals()
+        {
+            try
+            {
+                string query = "SELECT * FROM Animal";
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+                using (sqlDataAdapter)
+                {
+                    DataTable animalTable = new DataTable();
+
+                    sqlDataAdapter.Fill(animalTable);
+                    listAnimals.DisplayMemberPath = "Name";
+                    listAnimals.SelectedValuePath = "Id";
+                    listAnimals.ItemsSource = animalTable.DefaultView;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
