@@ -12,6 +12,6 @@
         <Label Content="Associated Animals List" HorizontalAlignment="Left" Margin="202,10,0,0" VerticalAlignment="Top"/>
         <ListBox Name="listAssociatedAnimals"  Margin="202,40,0,0" Height="175" HorizontalAlignment="Left" VerticalAlignment="Top" Width="158"/>
         <Label Content="Animals List" HorizontalAlignment="Left" Margin="402,10,0,0" VerticalAlignment="Top"/>
-        <ListBox Name="listAnimals"  Margin="402,40,0,0" Height="175" HorizontalAlignment="Left" VerticalAlignment="Top" Width="158"/>
+        <ListBox Name="listAnimals"  Margin="402,40,0,0" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top" Width="158"/>
     </Grid>
 </Window>
