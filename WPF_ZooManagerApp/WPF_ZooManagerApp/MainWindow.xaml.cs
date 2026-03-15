@@ -91,9 +91,9 @@ namespace WPF_ZooManagerApp
             }
         }
 
-        private void listZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ListZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           MessageBox.Show(listZoos.SelectedValue.ToString());
+          ShowAssociatedAnimals();
         }
     }
 }
