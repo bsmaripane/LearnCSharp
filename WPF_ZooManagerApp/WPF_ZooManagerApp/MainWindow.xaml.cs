@@ -81,7 +81,7 @@ namespace WPF_ZooManagerApp
 
                     sqlDataAdapter.Fill(animalTable);
                     listAssociatedAnimals.DisplayMemberPath = "Name";
-                    listAssociatedAnimalss.SelectedValuePath = "Id";
+                    listAssociatedAnimals.SelectedValuePath = "Id";
                     listAssociatedAnimals.ItemsSource = animalTable.DefaultView;
                 }
             }
@@ -93,7 +93,7 @@ namespace WPF_ZooManagerApp
 
         private void listZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show("Listzoos was clicked");
+           MessageBox.Show(listZoos.SelectedValue.ToString());
         }
     }
 }
