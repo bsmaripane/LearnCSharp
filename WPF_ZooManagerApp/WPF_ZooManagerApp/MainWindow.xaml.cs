@@ -124,7 +124,23 @@ namespace WPF_ZooManagerApp
 
         private void DeleteZoo_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Delete Zoo button");
+            try
+            {
+                string query = "DELETE FROM Zoo WHERE Id = @ZooId";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowZoos();
+            }
         }
 
         private void RemoveAnimal_Click(object sender, RoutedEventArgs e)
