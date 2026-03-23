@@ -246,12 +246,46 @@ namespace WPF_ZooManagerApp
 
         private void UpdateZoo_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Update Zoo button");
+            try
+            {
+                string query = "UPDATE Zoo SET Location = @Location WHERE Id = @ZooId";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@Location", TextBox.Text);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowZoos();
+            }
         }
 
         private void UpdateAnimal_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Update Animal button");
+            try
+            {
+                string query = "UPDATE Animal SET Name = @Name WHERE Id = @AnimalId";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@AnimalId", listAnimals.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@Name", TextBox.Text);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowAnimals();
+            }
         }
 
         private void AddAnimalToZoo_Click(object sender, RoutedEventArgs e)
