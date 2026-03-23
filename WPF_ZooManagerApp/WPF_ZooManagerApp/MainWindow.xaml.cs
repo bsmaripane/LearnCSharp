@@ -171,7 +171,7 @@ namespace WPF_ZooManagerApp
 
         private void AddAnimal_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Add Animal button");
+            
         }
 
         private void UpdateZoo_Click(object sender, RoutedEventArgs e)
@@ -186,7 +186,24 @@ namespace WPF_ZooManagerApp
 
         private void AddAnimalToZoo_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Add Animal to Zoo button");
+            try
+            {
+                string query = "INSERT INTO ZooAnimal(ZooId, AnimalId) VALUES(@ZooId, @AnimalId)";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@AnimalId", listAnimals.SelectedValue);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowAssociatedAnimals();
+            }
         }
 
         private void DeleteAnimal_Click(object sender, RoutedEventArgs e)
