@@ -171,7 +171,23 @@ namespace WPF_ZooManagerApp
 
         private void AddAnimal_Click(object sender, RoutedEventArgs e)
         {
-            
+            try
+            {
+                string query = "INSERT INTO Animal(Name) VALUES(@Name)";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@Name", TextBox.Text);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowAnimals();
+            }
         }
 
         private void UpdateZoo_Click(object sender, RoutedEventArgs e)
