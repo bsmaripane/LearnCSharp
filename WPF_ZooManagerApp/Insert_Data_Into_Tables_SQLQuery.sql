@@ -1,7 +1,4 @@
-﻿USE TutorialsDb
-GO
-
-drop table dbo.ZooAnimal
+﻿drop table dbo.ZooAnimal
 drop table dbo.Zoo
 drop table dbo.Animal
  

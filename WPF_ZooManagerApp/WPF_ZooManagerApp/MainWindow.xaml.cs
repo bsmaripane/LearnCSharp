@@ -150,7 +150,23 @@ namespace WPF_ZooManagerApp
 
         private void AddZoo_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Add Zoo button");
+            try
+            {
+                string query = "INSERT INTO Zoo(Location) VALUES(@Location)";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@Location", TextBox.Text);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowZoos();
+            }
         }
 
         private void AddAnimal_Click(object sender, RoutedEventArgs e)
