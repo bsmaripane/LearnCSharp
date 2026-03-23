@@ -92,6 +92,17 @@ namespace WPF_ZooManagerApp
             }
         }
 
+        private void ListZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowAssociatedAnimals();
+            ShowSelectedZooInTextBox();
+        }
+
+        private void ListAnimals_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowSelectedAnimalInTextBox();
+        }
+
         private void ShowSelectedZooInTextBox()
         { 
             try
@@ -116,10 +127,28 @@ namespace WPF_ZooManagerApp
             }
         }
 
-        private void ListZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ShowAssociatedAnimals();
-            ShowSelectedZooInTextBox();
+        private void ShowSelectedAnimalInTextBox()
+        { 
+            try
+            {
+                string query = "SELECT Name FROM Animal WHERE Id = @AnimalId";
+
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+                using (sqlDataAdapter)
+                {
+
+                    sqlCommand.Parameters.AddWithValue("@AnimalId", listAnimals.SelectedValue);
+                    DataTable animalDataTable = new DataTable();
+                    sqlDataAdapter.Fill(animalDataTable);
+                    TextBox.Text = animalDataTable.Rows[0]["Name"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
 
