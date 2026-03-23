@@ -92,9 +92,34 @@ namespace WPF_ZooManagerApp
             }
         }
 
+        private void ShowSelectedZooInTextBox()
+        { 
+            try
+            {
+                string query = "SELECT Location FROM Zoo WHERE Id = @ZooId";
+
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+                using (sqlDataAdapter)
+                {
+
+                    sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
+                    DataTable zooDataTable = new DataTable();
+                    sqlDataAdapter.Fill(zooDataTable);
+                    TextBox.Text = zooDataTable.Rows[0]["Location"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         private void ListZoos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-          ShowAssociatedAnimals();
+            ShowAssociatedAnimals();
+            ShowSelectedZooInTextBox();
         }
 
 
