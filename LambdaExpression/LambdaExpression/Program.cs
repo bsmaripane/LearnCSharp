@@ -8,6 +8,7 @@ namespace LambdaExpression
         {
             Console.WriteLine("Lambda Expression!\n");
             Console.WriteLine($"square expression tree: {square}");
+            Console.WriteLine($"Result: {square.Compile()(5)}");
 
             Console.ReadKey();
         }
