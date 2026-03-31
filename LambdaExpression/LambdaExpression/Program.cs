@@ -10,6 +10,10 @@ namespace LambdaExpression
             Console.WriteLine($"square expression tree: {square}");
             Console.WriteLine($"Result: {square.Compile()(5)}");
 
+            int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, };
+            var squaredNumbers = numbers.Select(x => x * x);
+            Console.WriteLine(string.Join(" ", squaredNumbers));
+
             Console.ReadKey();
         }
 
