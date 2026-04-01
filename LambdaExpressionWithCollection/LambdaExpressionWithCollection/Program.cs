@@ -18,7 +18,13 @@
                 Console.Write($"{square} ");
             Console.WriteLine();
 
+            // Lambda to find numbers divisible by 3
+            var numberDivisibleBy3 = numbers.FindAll(x => x % 3 == 0);
 
+            Console.Write("Numbers divisible by 3: ");
+            foreach (var number in numberDivisibleBy3)
+                Console.Write($"{number} ");
+            Console.WriteLine();
 
             Console.ReadKey();
         }
