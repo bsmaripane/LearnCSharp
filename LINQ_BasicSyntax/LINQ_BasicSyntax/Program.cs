@@ -35,7 +35,25 @@
 
             foreach (var item in zipped)
                 Console.WriteLine(item);
-           
+
+
+            var people = new[]
+            {
+                new {Name = "Alice", Age = 30},
+                new {Name = "Bob", Age = 30},
+                new {Name = "Charlie", Age = 25}
+            };
+
+            var grouped = people.GroupBy(p => p.Age);
+
+            Console.WriteLine("\nGroup people by age:");
+            foreach (var group in grouped)
+            {
+                Console.WriteLine($"Age: {group.Key}");
+                foreach (var person in group)
+                    Console.WriteLine(person.Name);
+            }
+
             Console.ReadKey();
         }
     }
