@@ -24,7 +24,11 @@
             Console.WriteLine("\nSorted names:");
             foreach (var name in orderNames)
                 Console.WriteLine(name);
+            
+            var countNames = names.Count();
 
+            Console.WriteLine($"\nTotal number of names: {countNames}");
+           
             Console.ReadKey();
         }
     }
