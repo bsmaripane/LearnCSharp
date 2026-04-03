@@ -15,7 +15,14 @@
 
             var filterName = names.Where(name => name.StartsWith("C"));
 
+            Console.WriteLine("\nFiltered names by 'C':");
             foreach (var name in filterName)
+                Console.WriteLine(name);
+    
+            var orderNames = names.OrderBy(name => name);
+
+            Console.WriteLine("\nSorted names:");
+            foreach (var name in orderNames)
                 Console.WriteLine(name);
 
             Console.ReadKey();
