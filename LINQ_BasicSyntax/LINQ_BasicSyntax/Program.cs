@@ -28,6 +28,13 @@
             var countNames = names.Count();
 
             Console.WriteLine($"\nTotal number of names: {countNames}");
+
+            var nums = new[] { 1, 2, 3 };
+            var letters = new[] { 'A', 'B', 'C' };
+            var zipped = nums.Zip(letters, (num, letter) => $"{num}-{letter}");
+
+            foreach (var item in zipped)
+                Console.WriteLine(item);
            
             Console.ReadKey();
         }
