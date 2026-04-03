@@ -10,6 +10,14 @@
             foreach (var number in evenNumbers)
                 Console.WriteLine(number);
 
+
+            var names = new[] { "Lesego", "Alice", "Charlie", "David", "Bob", "Chris", "Chesta" };
+
+            var filterName = names.Where(name => name.StartsWith("C"));
+
+            foreach (var name in filterName)
+                Console.WriteLine(name);
+
             Console.ReadKey();
         }
     }
