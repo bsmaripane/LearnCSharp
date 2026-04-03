@@ -54,6 +54,12 @@
                     Console.WriteLine(person.Name);
             }
 
+            var duplicates = new[] { 1, 1, 3, 2, 2, 2, 3, 1, 2, 3, 4, 5, 3, 5, 5, 5, 5, 5, 5, 5, };
+            var unique = duplicates.Distinct();
+
+            foreach (var number in unique)
+                Console.WriteLine(number);
+
             Console.ReadKey();
         }
     }
