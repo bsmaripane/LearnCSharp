@@ -75,5 +75,8 @@
                 </StackPanel>
             </Grid>
         </TabItem>
+        <TabItem Name="tbMaster" Header="Currency Master">
+            <Label Content="Hello Master Tab"/>
+        </TabItem>
     </TabControl>
 </Window>
