@@ -152,6 +152,9 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>
+                <StackPanel Grid.Row="4" Height="150" Width="800" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                    <Image Source="/Image/Udemy-Logo.png" Height="150" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="325 0"/>
+                </StackPanel>
             </Grid>
         </TabItem>
     </TabControl>
