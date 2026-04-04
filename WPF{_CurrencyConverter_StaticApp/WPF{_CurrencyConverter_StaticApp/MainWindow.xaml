@@ -147,6 +147,8 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
+                            <DataGridTextColumn x:Name="Amount" Header="Amount" Width="100" CanUserResize="False"/>
+                            <DataGridTextColumn x:Name="CurrencyName" Header="Currency Name" Width="100" CanUserResize="False"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>
