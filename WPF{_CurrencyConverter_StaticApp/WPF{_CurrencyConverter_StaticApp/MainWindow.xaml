@@ -104,8 +104,30 @@
                     <Label Content="Currency Master" Height="50" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Foreground="#ec2075"/>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="1000">
-                    <Label Content="Enter Amount : " Height="40" Width="180" Margin="180 0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" FontSize="20"/>
-                    <Label Content="Currency Name : " Height="40" Width="180" Margin="60 0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"/>
+                    <Label Content="Enter Amount : " Height="40" Width="180" Margin="280 0 0 0" VerticalContentAlignment="Bottom" Foreground="White" FontSize="20"/>
+                    <Label Content="Currency Name : " Height="40" Width="180" Margin="60 0 0 0" VerticalContentAlignment="Bottom" Foreground="White" FontSize="20"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="60" Width="1000">
+                    <TextBox Name="txtAmount" PreviewTextInput="NumberValidationTextBox" Height="30" Width="200" Margin="280 0 0 0" VerticalContentAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBox Name="txtCurrencyName" PreviewTextInput="NumberValidationTextBox" Height="30" Width="200" Margin="40 0 0 0" VerticalContentAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Height="60" Width="1000" Orientation="Horizontal">
+                    <Button Name="btnSave" Height="40" Width="150" Content="Save" Click="btnSave_Click" Margin="350 0 20 0" Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#ec2075" Offset="0.0"/>
+                                <GradientStop Color="#f33944" Offset="0.5"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button Name="btnCancel" Height="40" Width="150" Content="Cancel" Click="btnCancel_Click" Margin="0 0 20 0" Foreground="White" FontSize="20" Style="{StaticResource ButtonRound}">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="#ec2075" Offset="0.0"/>
+                                <GradientStop Color="#f33944" Offset="0.5"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
                 </StackPanel>
             </Grid>
         </TabItem>
