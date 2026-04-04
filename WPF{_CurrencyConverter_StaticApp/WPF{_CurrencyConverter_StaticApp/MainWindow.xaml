@@ -130,13 +130,13 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Grid.Row="3" Height="200" Width="800" Margin="100,0" VerticalAlignment="Top">
-                    <DataGrid Name="dgvCurrency" AutoGenerateColumns="False" Height="180" Margin="10">
+                    <DataGrid Name="dgvCurrency" AutoGenerateColumns="False" Height="180" Width="480" Margin="10" Background="Transparent" CanUserAddRows="False" SelectedCellsChanged="dgvCurrency_SelectedCellsChanged">
                         <DataGrid.Columns>
-                            <DataGridTextColumn x:Name="Id" Header="Id" Width="100" CanUserResize="False"/>
+                            <DataGridTextColumn x:Name="Id" Header="Id" Width="100" CanUserResize="False" Visibility="Hidden" Binding="{Binding Path=Id}"/>
                             <DataGridTemplateColumn Header="" Width="70" IsReadOnly="True" DisplayIndex="0">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Image Source="/Image/edit-button.png" ToolTip="Edit" Width="20"/>
+                                        <Image Source="/Image/edit-button.png" ToolTip="Edit" Height="20" Width="20" x:Name="Revise"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>

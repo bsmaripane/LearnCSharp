@@ -118,5 +118,10 @@ namespace WPF_CurrencyConverter_StaticApp
         {
 
         }
+
+        private void dgvCurrency_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+
+        }
     }
 }
