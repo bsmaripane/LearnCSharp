@@ -100,15 +100,15 @@
                         </Rectangle.Fill>
                     </Rectangle>
                 </Border>
-                <StackPanel Grid.Row="0" Width="1000" Height="50" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Grid.Row="0" Width="1000" Height="50" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5">
                     <Label Content="Currency Master" Height="50" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Foreground="#ec2075"/>
                 </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="1000">
-                    <Label Content="Enter Amount : " Height="40" Width="180" Margin="280 0 0 0" VerticalContentAlignment="Bottom" Foreground="White" FontSize="20"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="800" Margin="100,0">
+                    <Label Content="Enter Amount : " Height="40" Width="180" Margin="180 0 0 0" VerticalContentAlignment="Bottom" Foreground="White" FontSize="20"/>
                     <Label Content="Currency Name : " Height="40" Width="180" Margin="60 0 0 0" VerticalContentAlignment="Bottom" Foreground="White" FontSize="20"/>
                 </StackPanel>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="60" Width="1000">
-                    <TextBox Name="txtAmount" PreviewTextInput="NumberValidationTextBox" Height="30" Width="200" Margin="280 0 0 0" VerticalContentAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="60" Width="800" Margin="100,0">
+                    <TextBox Name="txtAmount" PreviewTextInput="NumberValidationTextBox" Height="30" Width="200" Margin="180 0 0 0" VerticalContentAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
                     <TextBox Name="txtCurrencyName" PreviewTextInput="NumberValidationTextBox" Height="30" Width="200" Margin="40 0 0 0" VerticalContentAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Height="60" Width="1000" Orientation="Horizontal">
@@ -130,7 +130,7 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Grid.Row="3" Height="200" Width="800" Margin="100,0" VerticalAlignment="Top">
-                    <DataGrid Name="dgvCurrency" AutoGenerateColumns="False" Height="180" Width="480" Margin="10" Background="Transparent" CanUserAddRows="False" SelectedCellsChanged="dgvCurrency_SelectedCellsChanged">
+                    <DataGrid Name="dgvCurrency" AutoGenerateColumns="False" Height="180" Width="480" Margin="10" Background="Transparent" CanUserAddRows="False" SelectedCellsChanged="dgvCurrency_SelectedCellsChanged" SelectionUnit="Cell" VerticalScrollBarVisibility="Auto">
                         <DataGrid.Columns>
                             <DataGridTextColumn x:Name="Id" Header="Id" Width="100" CanUserResize="False" Visibility="Hidden" Binding="{Binding Path=Id}"/>
                             <DataGridTemplateColumn Header="" Width="70" IsReadOnly="True" DisplayIndex="0">
@@ -143,12 +143,12 @@
                             <DataGridTemplateColumn Header="" Width="70" IsReadOnly="True" DisplayIndex="1">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Image Source="/Image/Delete-Bin-Button.png" ToolTip="Edit" Width="20"/>
+                                        <Image Source="/Image/Delete-Bin-Button.png" ToolTip="Edit" Height="20" Width="20" x:Name="Delete"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn x:Name="Amount" Header="Amount" Width="100" CanUserResize="False"/>
-                            <DataGridTextColumn x:Name="CurrencyName" Header="Currency Name" Width="100" CanUserResize="False"/>
+                            <DataGridTextColumn x:Name="Amount" Header="Amount" Width="100" CanUserResize="False" CanUserReorder="False" Binding="{Binding Path=Amount}" IsReadOnly="True"/>
+                            <DataGridTextColumn x:Name="CurrencyName" Header="Currency Name" Width="*" MinWidth="20" CanUserResize="False" CanUserReorder="False" Binding="{Binding Path=CurrencyName}" IsReadOnly="False"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </StackPanel>
