@@ -100,6 +100,13 @@
                         </Rectangle.Fill>
                     </Rectangle>
                 </Border>
+                <StackPanel Grid.Row="0" Width="1000" Height="50" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Currency Master" Height="50" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Foreground="#ec2075"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="1000">
+                    <Label Content="Enter Amount : " Height="40" Width="180" Margin="180 0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" FontSize="20"/>
+                    <Label Content="Currency Name : " Height="40" Width="180" Margin="60 0 0 0" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"/>
+                </StackPanel>
             </Grid>
         </TabItem>
     </TabControl>
