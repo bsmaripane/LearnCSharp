@@ -17,7 +17,7 @@
 
             IEnumerable<int> oddNumbers = from number in numbers where number % 2 != 0 select number;
 
-            foreach (int number in numbers)
+            foreach (int number in oddNumbers)
                 Console.WriteLine(number);
         }
     }
