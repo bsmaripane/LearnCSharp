@@ -1,5 +1,5 @@
 ﻿using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -22,6 +22,7 @@ namespace WPF_CurrencyConverter_StaticApp
         SqlConnection con = new SqlConnection();
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
+
         public MainWindow()
         {
             InitializeComponent();
