@@ -14,6 +14,10 @@ namespace LINQ_With_Lists
         {
             universities = new List<University>();
             students = new List<Student>();
+
+            universities.Add(new University { Id = 1, Name = "UJ"});
+            universities.Add(new University { Id = 2, Name = "UNISA"});
+            universities.Add(new University { Id = 3, Name = "Wits"});
         }
     }
 }
