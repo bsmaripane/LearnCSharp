@@ -6,7 +6,10 @@
         {
             UniversityManager universityManager = new UniversityManager();
 
+            Console.WriteLine("Male Students:");
             universityManager.MaleStudents();
+            Console.WriteLine("\nFemake Students:");
+            universityManager.FemaleStudents();
 
             Console.ReadKey();
         }
