@@ -38,5 +38,15 @@ namespace LINQ_With_Lists
                 student.Print();
             }
         }
+
+        public void FemaleStudent()
+        {
+            IEnumerable<Student> feemStudents = from student in students
+                                                where student.Gender == "female"
+                                                select student;
+
+            foreach (var student in feemStudents)
+                student.Print();
+        }
     }
 }
