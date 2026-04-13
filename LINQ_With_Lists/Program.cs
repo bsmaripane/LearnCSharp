@@ -14,6 +14,8 @@
             universityManager.AllStudents();
             Console.WriteLine("\nSort All Students by age:");
             universityManager.SortStudentsByAge();
+            Console.WriteLine("\nSort All UNISA Students:");
+            universityManager.AllStudentFromUNISA();
 
             Console.ReadKey();
         }
