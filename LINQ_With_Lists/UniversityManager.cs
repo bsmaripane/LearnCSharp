@@ -67,5 +67,16 @@ namespace LINQ_With_Lists
             foreach (var student in sortedStudents)
                 student.Print();
         }
+
+        public void AllStudentFromUNISA()
+        {
+            IEnumerable<Student> unisaStudent = from student in students 
+                                                join university in universities on student.UniversityId equals university.Id
+                                                where university.Name == "UNISA"
+                                                select student;
+
+            foreach(var student in unisaStudent)
+                student.Print();
+        }
     }
 }
