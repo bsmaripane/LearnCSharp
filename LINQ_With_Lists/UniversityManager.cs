@@ -39,13 +39,13 @@ namespace LINQ_With_Lists
             }
         }
 
-        public void FemaleStudent()
+        public void FemaleStudents()
         {
-            IEnumerable<Student> feemStudents = from student in students
+            IEnumerable<Student> femaleStudents = from student in students
                                                 where student.Gender == "female"
                                                 select student;
 
-            foreach (var student in feemStudents)
+            foreach (var student in femaleStudents)
                 student.Print();
         }
     }
