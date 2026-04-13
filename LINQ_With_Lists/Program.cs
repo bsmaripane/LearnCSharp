@@ -4,6 +4,9 @@
     {
         static void Main(string[] args)
         {
+            UniversityManager universityManager = new UniversityManager();
+
+            universityManager.MaleStudents();
 
             Console.ReadKey();
         }
