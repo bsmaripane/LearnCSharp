@@ -57,5 +57,15 @@ namespace LINQ_With_Lists
             foreach (var student in allStudents)
                 student.Print();
         }
+
+        public void SortStudentsByAge()
+        {
+            var sortedStudents = from student in students
+                                 orderby student.Age
+                                 select student;
+
+            foreach (var student in sortedStudents)
+                student.Print();
+        }
     }
 }
