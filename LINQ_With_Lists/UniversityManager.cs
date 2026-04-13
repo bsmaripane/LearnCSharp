@@ -78,5 +78,17 @@ namespace LINQ_With_Lists
             foreach(var student in unisaStudent)
                 student.Print();
         }
+
+        public void StudentAndUniversityNameCollection()
+        {
+            var newCollection = from student in students
+                                join university in universities on student.UniversityId equals university.Id
+                                orderby student.Name
+                                select new {StudentName = student.Name, UniversityName = university.Name};
+
+            Console.WriteLine("\nNew collection:");
+            foreach (var student in newCollection)
+                Console.WriteLine($"Student {student.StudentName} from University {student.UniversityName}");
+        }
     }
 }
