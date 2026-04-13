@@ -6,10 +6,12 @@
         {
             UniversityManager universityManager = new UniversityManager();
 
-            Console.WriteLine("Male Students:");
+            Console.WriteLine("Filter only Male Students:");
             universityManager.MaleStudents();
-            Console.WriteLine("\nFemake Students:");
+            Console.WriteLine("\nFilter only Femake Students:");
             universityManager.FemaleStudents();
+            Console.WriteLine("\nFilter All Students:");
+            universityManager.AllStudents();
 
             Console.ReadKey();
         }
