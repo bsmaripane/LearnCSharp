@@ -32,6 +32,11 @@ namespace LINQ_With_Lists
             IEnumerable<Student> maleStudents = from student in students
                                                 where student.Gender == "male"
                                                 select student;
+
+            foreach (var student in maleStudents)
+            {
+                student.Print();
+            }
         }
     }
 }
