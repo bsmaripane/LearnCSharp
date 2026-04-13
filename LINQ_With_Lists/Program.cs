@@ -12,6 +12,8 @@
             universityManager.FemaleStudents();
             Console.WriteLine("\nFilter All Students:");
             universityManager.AllStudents();
+            Console.WriteLine("\nSort All Students by age:");
+            universityManager.SortStudentsByAge();
 
             Console.ReadKey();
         }
