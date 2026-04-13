@@ -22,6 +22,7 @@ namespace LINQ_With_Lists
             students.Add(new Student { Id = 1, Name = "Felicia", Gender = "female", Age = 29, UniversityId = 1});
             students.Add(new Student { Id = 2, Name = "Lesego", Gender = "male", Age = 23, UniversityId = 1});
             students.Add(new Student { Id = 3, Name = "Mmashele", Gender = "female", Age = 53, UniversityId = 2});
+            students.Add(new Student { Id = 3, Name = "Earn", Gender = "Trans-gender", Age = 24, UniversityId = 2});
             students.Add(new Student { Id = 4, Name = "Maxine", Gender = "female", Age = 19, UniversityId = 3});
             students.Add(new Student { Id = 5, Name = "Kganya", Gender = "male", Age = 17, UniversityId = 3});
             students.Add(new Student { Id = 5, Name = "Belmy", Gender = "male", Age = 27, UniversityId = 2});
@@ -46,6 +47,14 @@ namespace LINQ_With_Lists
                                                 select student;
 
             foreach (var student in femaleStudents)
+                student.Print();
+        }
+
+        public void AllStudents()
+        {
+            IEnumerable<Student> allStudents = from student in students select student;
+
+            foreach (var student in allStudents)
                 student.Print();
         }
     }
