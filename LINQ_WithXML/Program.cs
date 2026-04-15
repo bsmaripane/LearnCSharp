@@ -1,4 +1,6 @@
-﻿namespace LINQ_WithXML
+﻿using System.Xml.Linq;
+
+namespace LINQ_WithXML
 {
     internal class Program
     {
@@ -27,6 +29,11 @@
                                             <University>UNISA</University>
                                         </Student>
                                     </Students>";
+
+            XDocument studentXdoc = new XDocument();
+            studentXdoc = XDocument.Parse(studentsXML);
+
+
             
             Console.ReadKey();
         }
