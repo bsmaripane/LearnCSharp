@@ -44,14 +44,9 @@ namespace LINQ_WithXML
             foreach (var student in students )
                 Console.WriteLine($"Student {student.Name} with age {student.Age} years old from University {student.University}");
 
-            var sortStudentsByAge = from student in studentXdoc.Descendants("Student")
-                                    orderby (int)student.Element("Age")
-                                    select new
-                                    {
-                                        Name = student.Element("Name").Value,
-                                        Age = student.Element("Age").Value,
-                                        University = student.Element("University").Value
-                                    };
+            var sortStudentsByAge = from student in students
+                                    orderby student.Age
+                                    select student;
 
             Console.WriteLine("\nSotr the list of student by age:");
             foreach (var student in sortStudentsByAge )
