@@ -21,11 +21,14 @@ namespace LinqToSQL_WPFApp1
     /// </summary>
     public partial class MainWindow : Window
     {
+        LinqToSqlDataClassesDataContext dataContext;
+
         public MainWindow()
         {
             InitializeComponent();
 
             string connectionString = ConfigurationManager.ConnectionStrings["LinqToSQL_WPFApp1.Properties.Settings.TutorialsDbConnectionString"].ConnectionString;
+            dataContext = new LinqToSqlDataClassesDataContext(connectionString);
         }
     }
 }
