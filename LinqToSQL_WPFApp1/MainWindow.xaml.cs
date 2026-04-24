@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
 
 namespace LinqToSQL_WPFApp1
 {
@@ -23,6 +24,8 @@ namespace LinqToSQL_WPFApp1
         public MainWindow()
         {
             InitializeComponent();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["LinqToSQL_WPFApp1.Properties.Settings.TutorialsDbConnectionString"].ConnectionString;
         }
     }
 }
