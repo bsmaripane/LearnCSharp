@@ -31,10 +31,13 @@ namespace LinqToSQL_WPFApp1
             dataContext = new LinqToSqlDataClassesDataContext(connectionString);
 
             InsertUniversities();
+            InsertStudent();
         }
 
         public void InsertUniversities()
         {
+            dataContext.ExecuteCommand("DELETE FROM University");
+
             University UJ = new University();
             UJ.Name = "University of Johannesburg";
             dataContext.Universities.InsertOnSubmit(UJ);
@@ -45,6 +48,24 @@ namespace LinqToSQL_WPFApp1
 
             dataContext.SubmitChanges();
             MainDataGrid.ItemsSource = dataContext.Universities;
+        }
+
+        public void InsertStudent()
+        {
+            University uj = dataContext.Universities.First(un => un.Name.Equals("University of Johannesburg"));
+            University unisa = dataContext.Universities.First(un => un.Name.Equals("University of South Africa"));
+
+            List<Student> students = new List<Student>();
+
+            students.Add(new Student { StudentName = "Felicia", Gender = "female", UniversityId = uj.Id });
+            students.Add(new Student { StudentName = "Belmy", Gender = "male", University = unisa });
+            students.Add(new Student { StudentName = "Tracy", Gender = "female", University = uj });
+            students.Add(new Student { StudentName = "Lesego", Gender = "male", UniversityId = unisa.Id });
+
+            dataContext.Students.InsertAllOnSubmit(students);
+            dataContext.SubmitChanges();
+
+            MainDataGrid.ItemsSource = dataContext.Students;
         }
     }
 }
