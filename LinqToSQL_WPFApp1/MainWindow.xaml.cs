@@ -38,6 +38,11 @@ namespace LinqToSQL_WPFApp1
             University UJ = new University();
             UJ.Name = "University of Johannesburg";
             dataContext.Universities.InsertOnSubmit(UJ);
+
+            University unisa = new University();
+            unisa.Name = "University of South Africa";
+            dataContext.Universities.InsertOnSubmit(unisa);
+
             dataContext.SubmitChanges();
             MainDataGrid.ItemsSource = dataContext.Universities;
         }
