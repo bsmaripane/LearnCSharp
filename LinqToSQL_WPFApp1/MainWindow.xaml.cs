@@ -30,5 +30,10 @@ namespace LinqToSQL_WPFApp1
             string connectionString = ConfigurationManager.ConnectionStrings["LinqToSQL_WPFApp1.Properties.Settings.TutorialsDbConnectionString"].ConnectionString;
             dataContext = new LinqToSqlDataClassesDataContext(connectionString);
         }
+
+        public void InsertUniversities()
+        {
+
+        }
     }
 }
