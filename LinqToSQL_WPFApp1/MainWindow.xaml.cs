@@ -29,11 +29,17 @@ namespace LinqToSQL_WPFApp1
 
             string connectionString = ConfigurationManager.ConnectionStrings["LinqToSQL_WPFApp1.Properties.Settings.TutorialsDbConnectionString"].ConnectionString;
             dataContext = new LinqToSqlDataClassesDataContext(connectionString);
+
+            InsertUniversities();
         }
 
         public void InsertUniversities()
         {
-
+            University UJ = new University();
+            UJ.Name = "University of Johannesburg";
+            dataContext.Universities.InsertOnSubmit(UJ);
+            dataContext.SubmitChanges();
+            MainDataGrid.ItemsSource = dataContext.Universities;
         }
     }
 }
