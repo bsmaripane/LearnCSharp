@@ -36,15 +36,19 @@ namespace LinqToSQL_WPFApp1
 
         public void InsertUniversities()
         {
-            dataContext.ExecuteCommand("DELETE FROM University");
+            if (!dataContext.Universities.Any(uni => uni.Name == "University of Johannesburg"))
+            {
+                University UJ = new University();
+                UJ.Name = "University of Johannesburg";
+                dataContext.Universities.InsertOnSubmit(UJ);
+            }
 
-            University UJ = new University();
-            UJ.Name = "University of Johannesburg";
-            dataContext.Universities.InsertOnSubmit(UJ);
-
-            University unisa = new University();
-            unisa.Name = "University of South Africa";
-            dataContext.Universities.InsertOnSubmit(unisa);
+            if (!dataContext.Universities.Any(uni => uni.Name == "University of South Africa"))
+            {
+                University unisa = new University();
+                unisa.Name = "University of South Africa";
+                dataContext.Universities.InsertOnSubmit(unisa);
+            }
 
             dataContext.SubmitChanges();
             MainDataGrid.ItemsSource = dataContext.Universities;
