@@ -60,10 +60,11 @@ namespace LinqToSQL_WPFApp1
             University unisa = dataContext.Universities.First(un => un.Name.Equals("University of South Africa"));
 
             var students = new List<Student>
-            { new Student { StudentName = "Felicia", Gender = "female", UniversityId = uj.Id },
-              new Student { StudentName = "Belmy", Gender = "male", University = unisa },
-              new Student { StudentName = "Tracy", Gender = "female", University = uj },
-              new Student { StudentName = "Lesego", Gender = "male", UniversityId = unisa.Id }
+            {
+                new Student { StudentName = "Felicia", Gender = "female", UniversityId = uj.Id },
+                new Student { StudentName = "Belmy", Gender = "male", UniversityId = unisa.Id },
+                new Student { StudentName = "Tracy", Gender = "female", UniversityId = uj.Id },
+                new Student { StudentName = "Lesego", Gender = "male", UniversityId = unisa.Id }
             };
 
             var existingStudents = dataContext.Students
