@@ -70,7 +70,7 @@ namespace LinqToSQL_WPFApp1
         
         public void InsertLecturer()
         {
-
+            
         }
     }
 }

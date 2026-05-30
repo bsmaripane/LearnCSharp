@@ -36,6 +36,9 @@ namespace LinqToSQL_WPFApp1
     partial void InsertStudent(Student instance);
     partial void UpdateStudent(Student instance);
     partial void DeleteStudent(Student instance);
+    partial void InsertLecture(Lecture instance);
+    partial void UpdateLecture(Lecture instance);
+    partial void DeleteLecture(Lecture instance);
     #endregion
 		
 		public LinqToSqlDataClassesDataContext() : 
@@ -81,6 +84,14 @@ namespace LinqToSQL_WPFApp1
 			get
 			{
 				return this.GetTable<Student>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Lecture> Lectures
+		{
+			get
+			{
+				return this.GetTable<Lecture>();
 			}
 		}
 	}
@@ -349,6 +360,92 @@ namespace LinqToSQL_WPFApp1
 						this._UniversityId = default(int);
 					}
 					this.SendPropertyChanged("University");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Lecture")]
+	public partial class Lecture : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _LectureName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnLectureNameChanging(string value);
+    partial void OnLectureNameChanged();
+    #endregion
+		
+		public Lecture()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LectureName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string LectureName
+		{
+			get
+			{
+				return this._LectureName;
+			}
+			set
+			{
+				if ((this._LectureName != value))
+				{
+					this.OnLectureNameChanging(value);
+					this.SendPropertyChanging();
+					this._LectureName = value;
+					this.SendPropertyChanged("LectureName");
+					this.OnLectureNameChanged();
 				}
 			}
 		}
