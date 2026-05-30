@@ -83,7 +83,16 @@ namespace LinqToSQL_WPFApp1
                 dataContext.SubmitChanges();
             }
 
-            MainDataGrid.ItemsSource = dataContext.Students;
+            MainDataGrid.ItemsSource = dataContext.Students
+                .Select(s => new
+                {
+                    s.Id,
+                    s.StudentName,
+                    s.Gender,
+                    s.UniversityId,
+                    University = s.University.Name
+                })
+                .ToList();
         }
         
         public void InsertLecturer()
