@@ -66,9 +66,14 @@ namespace LinqToSQL_WPFApp1
               new Student { StudentName = "Lesego", Gender = "male", UniversityId = unisa.Id }
             };
 
+            var existingStudents = dataContext.Students
+                .Select(s => new { s.StudentName, s.UniversityId })
+                .ToList();
+
             var newStudents = students
-                .Where(student => !dataContext.Students
-                    .Any(exist => exist.StudentName == student.StudentName && exist.UniversityId == student.UniversityId))
+                .Where(s => !existingStudents.Any(e =>
+                    e.StudentName == s.StudentName &&
+                    e.UniversityId == s.UniversityId))
                 .ToList();
 
             if (newStudents.Any())
