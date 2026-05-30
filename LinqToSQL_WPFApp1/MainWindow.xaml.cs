@@ -59,12 +59,12 @@ namespace LinqToSQL_WPFApp1
             University uj = dataContext.Universities.First(un => un.Name.Equals("University of Johannesburg"));
             University unisa = dataContext.Universities.First(un => un.Name.Equals("University of South Africa"));
 
-            List<Student> students = new List<Student>();
-
-            students.Add(new Student { StudentName = "Felicia", Gender = "female", UniversityId = uj.Id });
-            students.Add(new Student { StudentName = "Belmy", Gender = "male", University = unisa });
-            students.Add(new Student { StudentName = "Tracy", Gender = "female", University = uj });
-            students.Add(new Student { StudentName = "Lesego", Gender = "male", UniversityId = unisa.Id });
+            List<Student> students = new List<Student>
+            { new Student { StudentName = "Felicia", Gender = "female", UniversityId = uj.Id },
+              new Student { StudentName = "Belmy", Gender = "male", University = unisa },
+              new Student { StudentName = "Tracy", Gender = "female", University = uj },
+              new Student { StudentName = "Lesego", Gender = "male", UniversityId = unisa.Id }
+            }
 
             dataContext.Students.InsertAllOnSubmit(students);
             dataContext.SubmitChanges();
