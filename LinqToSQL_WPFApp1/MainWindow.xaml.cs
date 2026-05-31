@@ -104,5 +104,10 @@ namespace LinqToSQL_WPFApp1
             dataContext.SubmitChanges ();
             MainDataGrid.ItemsSource = dataContext.Lectures;
         }
+
+        public void InsertStudentLectureAssociation()
+        {
+
+        }
     }
 }
