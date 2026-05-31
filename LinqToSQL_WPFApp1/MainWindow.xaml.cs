@@ -99,8 +99,8 @@ namespace LinqToSQL_WPFApp1
         
         public void InsertLectures()
         {
-            dataContext.Lectures.InsertOnSubmit(new Lecture { LectureName = "Visual Progragramming I" });
-            dataContext.Lectures.InsertOnSubmit(new Lecture { LectureName = "Computer Progragramming I" });
+            dataContext.Lectures.InsertOnSubmit(new Lecture { LectureName = "Visual Programming I" });
+            dataContext.Lectures.InsertOnSubmit(new Lecture { LectureName = "Computer Programming I" });
 
             dataContext.SubmitChanges ();
             MainDataGrid.ItemsSource = dataContext.Lectures;
