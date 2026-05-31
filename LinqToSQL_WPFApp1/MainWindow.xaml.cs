@@ -107,7 +107,20 @@ namespace LinqToSQL_WPFApp1
 
         public void InsertStudentLectureAssociation()
         {
+            Student felicia = dataContext.Students.First(st => st.StudentName.Equals("Felicia"));
+            Student belmy = dataContext.Students.First(st => st.StudentName.Equals("Belmy"));
+            Student tracy = dataContext.Students.First(st => st.StudentName.Equals("Tracy"));
+            Student lesego = dataContext.Students.First(st => st.StudentName.Equals("Lesego"));
 
+            Lecture visualProgram = dataContext.Lectures.First(lec => lec.LectureName.Equals("Visual Programming I"));
+            Lecture compProgram = dataContext.Lectures.First(lec => lec.LectureName.Equals("Computer Programming I"));
+
+            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { Student = felicia, Lecture = visualProgram});
+            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { Student = belmy, Lecture = compProgram});
+            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { Student = tracy, Lecture = visualProgram});
+            dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { Student = lesego, Lecture = compProgram});
+
+            StudentLecture slFelicia = new StudentLecture();
         }
     }
 }
