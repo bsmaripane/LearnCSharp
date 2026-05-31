@@ -96,14 +96,22 @@ namespace LinqToSQL_WPFApp1
                 })
                 .ToList();
         }
-        
+
         public void InsertLectures()
         {
-            dataContext.Lectures.InsertOnSubmit(new Lecture { LectureName = "Visual Programming I" });
-            dataContext.Lectures.InsertOnSubmit(new Lecture { LectureName = "Computer Programming I" });
+            Lecture visualProgram = dataContext.Lectures
+                .FirstOrDefault(lec => lec.LectureName == "Visual Programming I");
 
-            dataContext.SubmitChanges ();
-            MainDataGrid.ItemsSource = dataContext.Lectures;
+            Lecture compProgram = dataContext.Lectures
+                .FirstOrDefault(lec => lec.LectureName == "Computer Programming I");
+
+            if (visualProgram == null || compProgram == null)
+            {
+                MessageBox.Show("Lecture not found.");
+                return;
+            }
+
+            dataContext.SubmitChanges();
         }
 
         public void InsertStudentLectureAssociation()
