@@ -129,11 +129,6 @@ namespace LinqToSQL_WPFApp1
             dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { Student = tracy, Lecture = visualProgram});
             dataContext.StudentLectures.InsertOnSubmit(new StudentLecture { Student = lesego, Lecture = compProgram});
 
-            StudentLecture slFelicia = new StudentLecture();
-            slFelicia.Student = felicia;
-            slFelicia.LectureId = visualProgram.Id;
-            dataContext.StudentLectures.InsertOnSubmit(slFelicia);
-
             dataContext.SubmitChanges();
 
             MainDataGrid.ItemsSource = dataContext.StudentLectures;
