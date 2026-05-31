@@ -133,5 +133,20 @@ namespace LinqToSQL_WPFApp1
 
             MainDataGrid.ItemsSource = dataContext.StudentLectures;
         }
+
+        private void AddStudentLecture(Student student, Lecture lecture)
+        {
+            bool exists = dataContext.StudentLectures.Any(sl =>
+                sl.StudentId == student.Id &&
+                sl.LectureId == lecture.Id);
+
+            if (!exists)
+                dataContext.StudentLectures.InsertOnSubmit(
+                    new StudentLecture
+                    {
+                        StudentId = student.Id,
+                        LectureId = lecture.Id
+                    });
+        }
     }
 }
