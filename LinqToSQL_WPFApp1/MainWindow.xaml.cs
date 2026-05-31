@@ -31,7 +31,7 @@ namespace LinqToSQL_WPFApp1
             dataContext = new LinqToSqlDataClassesDataContext(connectionString);
 
             InsertUniversities();
-            InsertStudent();
+            InsertStudents();
         }
 
         public void InsertUniversities()
@@ -54,7 +54,7 @@ namespace LinqToSQL_WPFApp1
             MainDataGrid.ItemsSource = dataContext.Universities;
         }
 
-        public void InsertStudent()
+        public void InsertStudents()
         {
             University uj = dataContext.Universities.First(un => un.Name.Equals("University of Johannesburg"));
             University unisa = dataContext.Universities.First(un => un.Name.Equals("University of South Africa"));
@@ -90,14 +90,19 @@ namespace LinqToSQL_WPFApp1
                     s.StudentName,
                     s.Gender,
                     s.UniversityId,
+                     
                     University = s.University.Name
                 })
                 .ToList();
         }
         
-        public void InsertLecturer()
+        public void InsertLectures()
         {
-            
+            dataContext.Lectures.InsertOnSubmit(new Lecture { LectureName = "Visual Progragramming I" });
+            dataContext.Lectures.InsertOnSubmit(new Lecture { LectureName = "Computer Progragramming I" });
+
+            dataContext.SubmitChanges ();
+            MainDataGrid.ItemsSource = dataContext.Lectures;
         }
     }
 }
